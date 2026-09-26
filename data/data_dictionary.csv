@@ -1,0 +1,37 @@
+table_name,column_name,data_type,description,business_meaning,example_value,nullable,key_type
+customers,customer_id,VARCHAR(20),Unique identifier for customer,Customer primary key,CUST-00001,No,Primary Key
+customers,customer_name,VARCHAR(100),Full name of customer,Customer profile name,James Smith,No,None
+customers,gender,VARCHAR(10),Gender classification,Demographic segmentation (Male/Female/Other),Male,Yes,None
+customers,age,INTEGER,Age in years,Demographic age cohort,34,No,None
+customers,city,VARCHAR(50),Customer primary city,Geographic delivery node,Los Angeles,Yes,None
+customers,state,VARCHAR(50),Customer US state,Geographic reporting layer,California,No,None
+customers,region,VARCHAR(20),Broad sales region,Macro sales territory (West/East/Central/South/North),West,No,None
+customers,signup_date,DATE,Account registration date,Customer cohort and tenure baseline,2023-04-15,No,None
+customers,customer_segment,VARCHAR(30),Customer classification,Market segment (Consumer/Corporate/Small Business),Consumer,No,None
+products,product_id,VARCHAR(20),Unique product identifier,Product catalog primary key,PROD-0001,No,Primary Key
+products,product_name,VARCHAR(150),Full title of product,Commercial catalog name,VoltTech Smartphone Pro 100,No,None
+products,category,VARCHAR(50),Merchandise category,Primary product grouping,Electronics,No,None
+products,subcategory,VARCHAR(50),Merchandise sub-division,Granular product type,Smartphones,Yes,None
+products,brand,VARCHAR(50),Manufacturing brand,Brand partner,VoltTech,Yes,None
+products,unit_cost,DECIMAL(10;2),Cost of goods sold (COGS),Direct acquisition/manufacturing cost per unit,425.50,No,None
+products,selling_price,DECIMAL(10;2),Catalog list price,Baseline retail price before customer discounts,599.99,No,None
+orders,order_id,VARCHAR(20),Unique order identifier,Order transaction primary key,ORD-000001,No,Primary Key
+orders,customer_id,VARCHAR(20),Reference to customer,Customer who initiated the transaction,CUST-00001,No,Foreign Key
+orders,order_date,DATE,Transaction timestamp,Order placement date,2023-08-14,No,None
+orders,product_id,VARCHAR(20),Reference to product,Product line item purchased,PROD-0001,No,Foreign Key
+orders,quantity,INTEGER,Units purchased,Physical unit volume for this line item,2,No,None
+orders,unit_price,DECIMAL(10;2),Price charged per unit,Transaction price at time of purchase,599.99,No,None
+orders,discount,DECIMAL(4;2),Promotional discount rate,Percentage discount applied (0.00 to 0.30),0.15,No,None
+orders,payment_method,VARCHAR(30),Financial payment channel,Checkout payment instrument used,Credit Card,No,None
+orders,order_status,VARCHAR(20),Fulfillment status,Lifecycle stage (Delivered/Shipped/Cancelled/Returned),Delivered,No,None
+orders,shipping_type,VARCHAR(20),Selected delivery tier,Shipping SLA tier (Standard/Express/Economy/Same Day),Standard,No,None
+returns,return_id,VARCHAR(20),Unique return identifier,Return merchandise authorization key,RET-000001,No,Primary Key
+returns,order_id,VARCHAR(20),Reference to original order,Original purchase order being returned,ORD-000012,No,Foreign Key
+returns,return_date,DATE,Date return logged,Date return package processed at depot,2023-08-25,No,None
+returns,return_reason,VARCHAR(100),Customer reported reason,Reason category for product reversal,Defective / Damaged,Yes,None
+returns,return_quantity,INTEGER,Units returned,Physical count of returned units,1,No,None
+delivery,order_id,VARCHAR(20),Reference to order,Fulfillment tracking key (1-to-1 with orders),ORD-000001,No,Primary Key / Foreign Key
+delivery,order_date,DATE,Order placement date,SLA clock start timestamp,2023-08-14,No,None
+delivery,promised_delivery_date,DATE,Customer SLA delivery deadline,Target delivery promise date based on shipping type,2023-08-18,No,None
+delivery,actual_delivery_date,DATE,Carrier delivery completion date,Physical delivery timestamp at customer doorstep,2023-08-17,Yes,None
+delivery,delivery_status,VARCHAR(30),Delivery SLA milestone,Carrier SLA classification (Delivered On-Time/Delivered Late/Cancelled/In Transit),Delivered On-Time,Yes,None

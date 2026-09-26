@@ -1,0 +1,34 @@
+-- ShopSphere Data Seeding Instructions & DML Script
+-- This script outlines instructions for populating the ShopSphere relational database
+-- using either SQLite or PostgreSQL.
+
+-- ============================================================================
+-- METHOD A: SQLite Direct CSV Import (Command Line)
+-- ============================================================================
+-- 1. Open SQLite terminal:
+--    sqlite3 database/shopsphere.db
+-- 2. Execute schema creation:
+--    .read database/schema.sql
+-- 3. Set CSV mode and import:
+--    .mode csv
+--    .import data/processed/customers.csv customers
+--    .import data/processed/products.csv products
+--    .import data/processed/orders.csv orders
+--    .import data/processed/delivery.csv delivery
+--    .import data/processed/returns.csv returns
+
+-- ============================================================================
+-- METHOD B: PostgreSQL COPY Commands
+-- ============================================================================
+-- Run from psql connected to target database:
+-- \copy customers FROM 'data/processed/customers.csv' WITH (FORMAT csv, HEADER true);
+-- \copy products FROM 'data/processed/products.csv' WITH (FORMAT csv, HEADER true);
+-- \copy orders(order_id, customer_id, order_date, product_id, quantity, unit_price, discount, payment_method, order_status, shipping_type) FROM 'data/processed/orders.csv' WITH (FORMAT csv, HEADER true);
+-- \copy delivery(order_id, order_date, promised_delivery_date, actual_delivery_date, delivery_status) FROM 'data/processed/delivery.csv' WITH (FORMAT csv, HEADER true);
+-- \copy returns FROM 'data/processed/returns.csv' WITH (FORMAT csv, HEADER true);
+
+-- ============================================================================
+-- METHOD C: Automated Python Ingestion
+-- ============================================================================
+-- Execute the automated pipeline:
+-- python python/scripts/clean_and_profile.py

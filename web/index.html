@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopSphere Analytics — Executive E-Commerce BI Dashboard</title>
+  <meta name="description" content="ShopSphere E-Commerce Sales, Customer, and Business Performance Analytics interactive executive BI dashboard. End-to-end portfolio project featuring 102,420 orders, $24.4M net sales, and dimensional modeling.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome, Chart.js & SheetJS (Excel Support) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <!-- Top Global Navigation Bar -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="brand-text">
+          <h1>ShopSphere<span class="brand-highlight">Analytics</span></h1>
+          <p class="brand-sub">Executive BI & Commercial Performance Portal</p>
+        </div>
+      </div>
+      <div class="live-pill hidden" id="liveDataPill">
+        <span class="pulse-dot" id="livePillDot"></span>
+        <span id="livePillText">PRODUCTION DATA: 2023 - 2025</span>
+      </div>
+    </div>
+    
+    <div class="header-right">
+      <div class="quick-stats-strip hidden" id="headerQuickStats">
+        <div class="quick-stat">
+          <span class="q-label">Total Volume</span>
+          <span class="q-val" id="quickStatOrders">--</span>
+        </div>
+        <div class="quick-stat">
+          <span class="q-label">Net Sales</span>
+          <span class="q-val highlight-green" id="quickStatSales">--</span>
+        </div>
+        <div class="quick-stat">
+          <span class="q-label">Gross Margin</span>
+          <span class="q-val highlight-blue" id="quickStatMargin">--</span>
+        </div>
+      </div>
+      
+      <label for="headerFileInput" class="attach-file-quick-btn" title="Click to browse and attach your Excel (.xlsx, .xls) or CSV dataset">
+        <i class="fa-solid fa-file-excel"></i>
+        <span>Attach Excel / CSV</span>
+      </label>
+      <input type="file" id="headerFileInput" accept=".xlsx, .xls, .csv, .json, .txt" class="file-hidden-input">
+
+      <button id="btnClearAllData" class="btn-clear-dataset hidden" title="Clear current dataset and start blank">
+        <i class="fa-solid fa-trash-can"></i>
+        <span>Clear</span>
+      </button>
+
+      <button id="openAttachModalBtn" class="attach-data-btn" title="Open Data Ingestion & Attachment Portal">
+        <i class="fa-solid fa-sliders"></i>
+        <span>Data Portal & Presets</span>
+      </button>
+
+      <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      
+      <a href="https://github.com" target="_blank" class="github-btn" title="View Source on GitHub">
+        <i class="fa-brands fa-github"></i>
+        <span>Repository</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Dynamic Active Dataset Notification Banner -->
+  <div id="activeDatasetBanner" class="active-dataset-banner hidden">
+    <div class="banner-content">
+      <div class="banner-left">
+        <span class="badge-custom"><i class="fa-solid fa-sliders"></i> CUSTOM DATA ATTACHED</span>
+        <span id="activeDatasetLabel">Displaying custom dataset</span>
+      </div>
+      <button id="resetMasterDataBtn" class="banner-reset-btn" title="Restore standard 102.4K records dataset">
+        <i class="fa-solid fa-rotate-left"></i> Revert to Master Baseline (102.4K Orders)
+      </button>
+    </div>
+  </div>
+
+  <!-- Global Interactive Slicers Bar -->
+  <section class="slicers-bar hidden" id="slicersSection">
+    <div class="slicer-container">
+      <div class="slicer-item">
+        <label for="yearSlicer"><i class="fa-regular fa-calendar"></i> Fiscal Year</label>
+        <select id="yearSlicer">
+          <option value="ALL">All Years (2023 - 2025)</option>
+          <option value="2023">FY 2023</option>
+          <option value="2024">FY 2024</option>
+          <option value="2025">FY 2025</option>
+        </select>
+      </div>
+
+      <div class="slicer-item">
+        <label for="regionSlicer"><i class="fa-solid fa-map-location-dot"></i> Sales Region</label>
+        <select id="regionSlicer">
+          <option value="ALL">All 5 Regions</option>
+          <option value="West">West Region</option>
+          <option value="East">East Region</option>
+          <option value="Central">Central Region</option>
+          <option value="South">South Region</option>
+          <option value="North">North Region</option>
+        </select>
+      </div>
+
+      <div class="slicer-item">
+        <label for="categorySlicer"><i class="fa-solid fa-tags"></i> Product Category</label>
+        <select id="categorySlicer">
+          <option value="ALL">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Apparel & Fashion">Apparel & Fashion</option>
+          <option value="Home & Kitchen">Home & Kitchen</option>
+          <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+          <option value="Sports & Fitness">Sports & Fitness</option>
+        </select>
+      </div>
+
+      <div class="slicer-item">
+        <label for="segmentSlicer"><i class="fa-solid fa-users-viewfinder"></i> Customer Segment</label>
+        <select id="segmentSlicer">
+          <option value="ALL">All Segments</option>
+          <option value="Consumer">Consumer (B2C)</option>
+          <option value="Corporate">Corporate (B2B)</option>
+          <option value="Small Business">Small Business</option>
+        </select>
+      </div>
+
+      <button id="resetFiltersBtn" class="reset-filters-btn">
+        <i class="fa-solid fa-arrow-rotate-left"></i> Reset
+      </button>
+    </div>
+  </section>
+
+  <!-- Main View Navigation Tabs -->
+  <nav class="report-nav-tabs hidden" id="reportTabs">
+    <button class="nav-tab active" data-tab="tab-overview">
+      <i class="fa-solid fa-chart-pie"></i> 1. Executive Overview
+    </button>
+    <button class="nav-tab" data-tab="tab-products">
+      <i class="fa-solid fa-boxes-stacked"></i> 2. Sales & Products
+    </button>
+    <button class="nav-tab" data-tab="tab-customers">
+      <i class="fa-solid fa-user-group"></i> 3. Customer Analytics
+    </button>
+    <button class="nav-tab" data-tab="tab-operations">
+      <i class="fa-solid fa-truck-fast"></i> 4. Operations & Logistics
+    </button>
+    <button class="nav-tab" data-tab="tab-insights">
+      <i class="fa-solid fa-lightbulb"></i> 5. Management Decisions
+    </button>
+    <button class="nav-tab" data-tab="tab-docs">
+      <i class="fa-solid fa-code"></i> SQL & Documentation
+    </button>
+    <button class="nav-tab" data-tab="tab-upload">
+      <i class="fa-solid fa-cloud-arrow-up"></i> 7. Data Ingestion & Database
+    </button>
+  </nav>
+
+  <!-- Main Content Canvas -->
+  <main class="dashboard-canvas">
+    
+    <!-- =================================================================== -->
+    <!-- PAGE 1: EXECUTIVE OVERVIEW -->
+    <!-- =================================================================== -->
+    <section class="tab-pane active" id="tab-overview">
+      <!-- Awaiting Dataset Hero Banner (Shown when no dataset is loaded) -->
+      <div id="awaitingDataHero" class="awaiting-data-hero">
+        <div class="hero-drop-card">
+          <div class="hero-icon-pulse">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </div>
+          <h2>Ready to Analyze Your Data</h2>
+          <p class="hero-subtext">No dataset is currently active. Attach any Excel workbook (.xlsx, .xls), CSV, or JSON transaction dataset to calculate KPIs, trends, product categories, and logistics automatically.</p>
+          <div class="hero-actions">
+            <label for="headerFileInput" class="btn-hero-attach">
+              <i class="fa-solid fa-file-excel"></i> Attach Excel / CSV File
+            </label>
+            <button type="button" id="btnHeroLoadSampleExcel" class="btn-hero-sample" style="background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.4); color: #4ade80; border-radius: 8px; padding: 0.65rem 1.25rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+              <i class="fa-solid fa-file-excel"></i> Try Sample Excel (20 Orders)
+            </button>
+            <button type="button" id="btnHeroLoadDemo" class="btn-hero-demo">
+              <i class="fa-solid fa-bolt"></i> Or Load ShopSphere 102K Demo
+            </button>
+          </div>
+          <div class="hero-format-pill">
+            <i class="fa-solid fa-circle-check"></i> Supports Excel (<code>.xlsx</code>, <code>.xls</code>), <code>.csv</code>, and <code>.json</code> with auto-detected columns
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Dashboard Overview Content (Only displayed when dataset is attached) -->
+      <div id="overviewDataContent" class="overview-data-content hidden">
+        <!-- 9 Dynamic KPI Scorecard Tiles -->
+        <div class="kpi-grid">
+        <div class="kpi-card" id="cardNetRev">
+          <div class="kpi-header">
+            <span class="kpi-title">TOTAL NET REVENUE</span>
+            <div class="kpi-icon icon-blue"><i class="fa-solid fa-dollar-sign"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiNetRev">--</div>
+          <div class="kpi-footer">
+            <span class="kpi-subtitle" id="kpiSubNetRev">Awaiting dataset</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" id="cardGrossRev">
+          <div class="kpi-header">
+            <span class="kpi-title">GROSS REVENUE</span>
+            <div class="kpi-icon icon-purple"><i class="fa-solid fa-receipt"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiGrossRev">--</div>
+          <div class="kpi-footer">
+            <span class="kpi-subtitle" id="kpiSubGrossRev">Awaiting dataset</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" id="cardGrossProf">
+          <div class="kpi-header">
+            <span class="kpi-title">GROSS PROFIT</span>
+            <div class="kpi-icon icon-green"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+          </div>
+          <div class="kpi-value highlight-green" id="kpiGrossProf">--</div>
+          <div class="kpi-footer">
+            <span class="kpi-subtitle" id="kpiSubGrossProf">Awaiting dataset</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" id="cardMargin">
+          <div class="kpi-header">
+            <span class="kpi-title">PROFIT MARGIN</span>
+            <div class="kpi-icon icon-teal"><i class="fa-solid fa-percent"></i></div>
+          </div>
+          <div class="kpi-value highlight-teal" id="kpiMargin">--</div>
+          <div class="kpi-footer">
+            <span class="kpi-subtitle" id="kpiSubMargin">Awaiting dataset</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" id="cardOrders">
+          <div class="kpi-header">
+            <span class="kpi-title">COMPLETED ORDERS</span>
+            <div class="kpi-icon icon-orange"><i class="fa-solid fa-cart-shopping"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiOrders">--</div>
+          <div class="kpi-footer">
+            <span class="kpi-subtitle" id="kpiSubOrders">Awaiting dataset</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" id="cardCustomers">
+          <div class="kpi-header">
+            <span class="kpi-title">ACTIVE BUYERS</span>
+            <div class="kpi-icon icon-indigo"><i class="fa-solid fa-users"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiCustomers">--</div>
+          <div class="kpi-footer">
+            <span class="kpi-subtitle" id="kpiSubCustomers">Awaiting dataset</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" id="cardAOV">
+          <div class="kpi-header">
+            <span class="kpi-title">AVG ORDER VALUE</span>
+            <div class="kpi-icon icon-blue"><i class="fa-solid fa-basket-shopping"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiAOV">--</div>
+          <div class="kpi-footer">
+            <span class="kpi-subtitle" id="kpiSubAOV">Awaiting dataset</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" id="cardReturnRate">
+          <div class="kpi-header">
+            <span class="kpi-title">RETURN RATE</span>
+            <div class="kpi-icon icon-red"><i class="fa-solid fa-rotate-left"></i></div>
+          </div>
+          <div class="kpi-value highlight-red" id="kpiReturnRate">--</div>
+          <div class="kpi-footer">
+            <span class="kpi-subtitle" id="kpiSubReturnRate">Awaiting dataset</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" id="cardLateRate">
+          <div class="kpi-header">
+            <span class="kpi-title">LATE DELIVERY RATE</span>
+            <div class="kpi-icon icon-yellow"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          </div>
+          <div class="kpi-value highlight-yellow" id="kpiLateRate">--</div>
+          <div class="kpi-footer">
+            <span class="kpi-subtitle" id="kpiSubLateRate">Awaiting dataset</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Visuals Grid -->
+      <div class="dashboard-row">
+        <!-- 36-Month Sales Trajectory Chart -->
+        <div class="card col-8">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-chart-line"></i> 36-Month Net Revenue, Profit & Order Volume Trajectory</h3>
+              <p class="card-caption">Monthly commercial growth with seasonal Q4 peaks (Nov-Dec surges +55% over baseline)</p>
+            </div>
+            <div class="card-actions">
+              <span class="badge info">Interactive Cross-Filter</span>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="monthlyTrendChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Category Contribution Chart -->
+        <div class="card col-4">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-chart-pie"></i> Revenue vs. Profit by Category</h3>
+              <p class="card-caption">Revealing margin dilution in Electronics vs. Apparel</p>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="categoryContributionChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-row">
+        <!-- Regional Performance Matrix -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-earth-americas"></i> Regional Sales & Profit Margin Performance</h3>
+              <p class="card-caption">West & East dominate volume; Central and South experience highest delays</p>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="regionalSalesChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Payment Channels & Checkout Share -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-credit-card"></i> Payment Channel Revenue & Cancellation Risk</h3>
+              <p class="card-caption">Cash on Delivery (COD) accounts for 7.8% cancellation rate ($1.16M total lost)</p>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="paymentMethodsChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PAGE 2: SALES & PRODUCT ANALYSIS -->
+    <!-- =================================================================== -->
+    <section class="tab-pane" id="tab-products">
+      <div class="dashboard-row">
+        <!-- Category Merchandising Matrix Table -->
+        <div class="card col-12">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-table-list"></i> Merchandise Department Matrix</h3>
+              <p class="card-caption">Detailed commercial metrics across all 5 product categories (Units, Revenue, COGS, Margins, Returns)</p>
+            </div>
+            <input type="text" id="categoryTableSearch" class="table-search-input" placeholder="Search category...">
+          </div>
+          <div class="table-responsive">
+            <table class="data-table" id="categoryTable">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th class="text-right">Catalog SKUs</th>
+                  <th class="text-right">Units Sold</th>
+                  <th class="text-right">Net Revenue ($)</th>
+                  <th class="text-right">Revenue Share</th>
+                  <th class="text-right">Gross Profit ($)</th>
+                  <th class="text-right">Gross Margin %</th>
+                  <th class="text-right">Return Rate %</th>
+                  <th class="text-center">Status</th>
+                </tr>
+              </thead>
+              <tbody id="categoryTableBody">
+                <!-- Injected dynamically via app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-row">
+        <!-- Top 10 Best Sellers -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-trophy"></i> Top 10 Best-Selling SKUs (By Revenue)</h3>
+              <p class="card-caption">Core commercial revenue drivers ranked via DENSE_RANK()</p>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table compact" id="top10Table">
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th class="text-right">Revenue</th>
+                  <th class="text-right">Profit</th>
+                  <th class="text-right">Margin %</th>
+                </tr>
+              </thead>
+              <tbody id="top10TableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Bottom 10 Margin Compressed SKUs -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-triangle-exclamation"></i> Bottom 10 Margin Compressed SKUs (Loss Leaders)</h3>
+              <p class="card-caption">High volume products operating near or below wholesale acquisition cost</p>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table compact" id="bottom10Table">
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th class="text-right">Revenue</th>
+                  <th class="text-right">Profit</th>
+                  <th class="text-right">Margin %</th>
+                </tr>
+              </thead>
+              <tbody id="bottom10TableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div> <!-- End of overviewDataContent -->
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PAGE 3: CUSTOMER ANALYTICS -->
+    <!-- =================================================================== -->
+    <section class="tab-pane" id="tab-customers">
+      <div class="dashboard-row">
+        <!-- Customer Segment Economics Card -->
+        <div class="card col-5">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-chart-column"></i> Customer Segment Economics</h3>
+              <p class="card-caption">Corporate B2B orders generate 84% higher AOV than Consumer orders</p>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="segmentChart"></canvas>
+          </div>
+          <div class="segment-pill-summary" id="segmentPillSummary">
+            <!-- Dynamic KPI badges -->
+          </div>
+        </div>
+
+        <!-- Top 20 VIP Customer Accounts -->
+        <div class="card col-7">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-crown"></i> Top 20 VIP Accounts (Lifetime Value Ranking)</h3>
+              <p class="card-caption">High-value clients driving disproportionate enterprise revenue</p>
+            </div>
+            <span class="badge success">55.6% Repeat Buyer Rate</span>
+          </div>
+          <div class="table-responsive max-height-380">
+            <table class="data-table compact" id="vipTable">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Customer ID</th>
+                  <th>Full Name</th>
+                  <th>Segment</th>
+                  <th>Region</th>
+                  <th class="text-right">Orders</th>
+                  <th class="text-right">Spend ($)</th>
+                  <th class="text-right">Gross Profit ($)</th>
+                </tr>
+              </thead>
+              <tbody id="vipTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PAGE 4: OPERATIONS & LOGISTICS -->
+    <!-- =================================================================== -->
+    <section class="tab-pane" id="tab-operations">
+      <!-- Root Cause Discovery Banner -->
+      <div class="alert-banner">
+        <div class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="alert-content">
+          <h4>CRITICAL ROOT CAUSE CONFIRMED: Carrier Delivery Delays Multiply Product Returns by 2.8x</h4>
+          <p>Statistical Chi-Square testing (&chi;<sup>2</sup> = 1842.15, p &lt; 0.001) proves shipments delivered late suffer a <strong>19.84% return rate</strong> compared to only <strong>7.12% for on-time orders</strong> ($485K in reverse freight burn).</p>
+        </div>
+      </div>
+
+      <div class="dashboard-row">
+        <!-- Delay vs Returns Correlation Chart -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-arrows-split-up-and-left"></i> Fulfillment Status vs. Product Return Rate</h3>
+              <p class="card-caption">Quantifying buyer remorse induced by carrier tardiness</p>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="delayVsReturnsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Return Reason Taxonomy Chart -->
+        <div class="card col-6">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-clipboard-question"></i> Customer Return Reason Breakdown</h3>
+              <p class="card-caption">Size/Fit drives 58% of Apparel returns; Late Delivery drives 62% of delayed order returns</p>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="returnReasonsChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-row">
+        <!-- Shipping SLA Tier Analysis -->
+        <div class="card col-12">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3><i class="fa-solid fa-truck-ramp-box"></i> Shipping Tier Logistics & Carrier SLA Breach Performance</h3>
+              <p class="card-caption">Evaluating Standard, Express, Economy, and Same Day SLA reliability</p>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table" id="shippingTable">
+              <thead>
+                <tr>
+                  <th>Shipping Service Tier</th>
+                  <th class="text-right">Order Count</th>
+                  <th class="text-right">Share of Total</th>
+                  <th class="text-right">Net Revenue ($)</th>
+                  <th class="text-right">Late Delivery %</th>
+                  <th class="text-center">SLA Compliance Status</th>
+                </tr>
+              </thead>
+              <tbody id="shippingTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PAGE 5: MANAGEMENT INSIGHTS & ACTION MATRIX -->
+    <!-- =================================================================== -->
+    <section class="tab-pane" id="tab-insights">
+      <div class="insights-container">
+        <div class="insights-header">
+          <h2><i class="fa-solid fa-bullseye"></i> Strategic Management Insights & Action Matrix</h2>
+          <p>Evidence-based decisions linking empirical findings directly to operational recommendations, priorities, responsible leaders, and target KPIs.</p>
+        </div>
+
+        <div class="action-cards-grid">
+          <!-- Card 1 -->
+          <div class="action-card priority-p1">
+            <div class="action-card-header">
+              <span class="action-badge p1">PRIORITY: P1 (IMMEDIATE)</span>
+              <span class="action-dept"><i class="fa-solid fa-truck-fast"></i> Supply Chain & Logistics</span>
+            </div>
+            <h3 class="action-title">1. Logistics Carrier SLA Enforcement & Texas 3PL Fulfillment</h3>
+            <div class="action-body">
+              <div class="action-field"><span class="f-label">Finding:</span> 11.38% of orders (11,660 shipments) miss promised delivery SLAs, triggering an 19.8% return rate (2.8x higher than on-time orders).</div>
+              <div class="action-field"><span class="f-label">Evidence:</span> Central and South regions suffer longest delays (3.8 days). $485K in reverse logistics freight burn and customer churn.</div>
+              <div class="action-field"><span class="f-label">Prescribed Action:</span> Introduce contractual 3PL delay penalty clawbacks (&gt;5% late). Forward-deploy high-velocity SKUs in a Dallas/Fort Worth micro-depot.</div>
+              <div class="action-meta">
+                <div class="meta-item"><strong>Expected Impact:</strong> Prevent ~1,450 returns/yr; recover $346K in retained net sales.</div>
+                <div class="meta-item"><strong>Accountable Lead:</strong> VP of Supply Chain</div>
+                <div class="meta-item"><strong>Target KPI:</strong> Late Delivery Rate &lt; 5.0%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="action-card priority-p1">
+            <div class="action-card-header">
+              <span class="action-badge p1">PRIORITY: P1 (IMMEDIATE)</span>
+              <span class="action-dept"><i class="fa-solid fa-microchip"></i> Merchandising & Pricing</span>
+            </div>
+            <h3 class="action-title">2. Electronics Minimum Margin Floor & Loss-Leader Delisting</h3>
+            <div class="action-body">
+              <div class="action-field"><span class="f-label">Finding:</span> Electronics represents 45% of company sales volume ($11.9M) but delivers only 28% of gross profit due to an 18.5% margin.</div>
+              <div class="action-field"><span class="f-label">Evidence:</span> 15 tech SKUs generate $1.2M in volume at sub-3.5% margin, with 2 promotional laptop models operating at a direct loss (-$18.4K).</div>
+              <div class="action-field"><span class="f-label">Prescribed Action:</span> Enforce automated pricing floors blocking discounts below 15% margin. Mandate high-margin accessory attach bundles.</div>
+              <div class="action-meta">
+                <div class="meta-item"><strong>Expected Impact:</strong> Eliminate $35K direct hardware losses; recover 420 bps in category margin.</div>
+                <div class="meta-item"><strong>Accountable Lead:</strong> VP of Merchandising</div>
+                <div class="meta-item"><strong>Target KPI:</strong> Electronics Margin &ge; 24.0%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="action-card priority-p2">
+            <div class="action-card-header">
+              <span class="action-badge p2">PRIORITY: P2 (MEDIUM)</span>
+              <span class="action-dept"><i class="fa-solid fa-shirt"></i> Digital Product & UX</span>
+            </div>
+            <h3 class="action-title">3. Apparel & Fashion 3D Fit Guide & Vendor Spec Normalization</h3>
+            <div class="action-body">
+              <div class="action-field"><span class="f-label">Finding:</span> Apparel records an elevated 14.2% return rate ($684K returned), with 58.4% of returns citing sizing/fit mismatches.</div>
+              <div class="action-field"><span class="f-label">Evidence:</span> High inspection, dry-cleaning, and seasonal inventory depreciation costs.</div>
+              <div class="action-field"><span class="f-label">Prescribed Action:</span> Standardize vendor measurements into cm/inch specs. Deploy an interactive 3D digital sizing tool on all apparel product pages.</div>
+              <div class="action-meta">
+                <div class="meta-item"><strong>Expected Impact:</strong> Reduce apparel return rate to &lt;10.0%, preserving $205K in sales.</div>
+                <div class="meta-item"><strong>Accountable Lead:</strong> Head of Digital Product</div>
+                <div class="meta-item"><strong>Target KPI:</strong> Apparel Return Rate &lt; 9.0%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="action-card priority-p2">
+            <div class="action-card-header">
+              <span class="action-badge p2">PRIORITY: P2 (MEDIUM)</span>
+              <span class="action-dept"><i class="fa-solid fa-building"></i> Commercial B2B Sales</span>
+            </div>
+            <h3 class="action-title">4. B2B Corporate Wholesale Portal & Tiered Volume Pricing</h3>
+            <div class="action-body">
+              <div class="action-field"><span class="f-label">Finding:</span> Corporate buyers achieve an Average Order Value of $386.42 (+84% vs Consumers), but represent only 22.4% of total order volume.</div>
+              <div class="action-field"><span class="f-label">Evidence:</span> Corporate clients have lower cancellation rates (3.8%) and purchase larger multi-unit baskets (2.8 units/order).</div>
+              <div class="action-field"><span class="f-label">Prescribed Action:</span> Launch "ShopSphere Business" portal with Net-30 invoice billing, automated volume rebates, and dedicated account reps.</div>
+              <div class="action-meta">
+                <div class="meta-item"><strong>Expected Impact:</strong> +15% corporate order growth yields $1.33M in net revenue and $433K gross profit.</div>
+                <div class="meta-item"><strong>Accountable Lead:</strong> Commercial Sales Lead</div>
+                <div class="meta-item"><strong>Target KPI:</strong> Corporate Revenue Share &ge; 30%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="action-card priority-p3">
+            <div class="action-card-header">
+              <span class="action-badge p3">PRIORITY: P3 (ONGOING)</span>
+              <span class="action-dept"><i class="fa-solid fa-cash-register"></i> Customer Experience & Checkout</span>
+            </div>
+            <h3 class="action-title">5. Cash on Delivery (COD) SMS Verification & Proactive Delay Alerts</h3>
+            <div class="action-body">
+              <div class="action-field"><span class="f-label">Finding:</span> 4.77% of orders are cancelled ($1.16M lost revenue), with COD exhibiting an elevated 7.8% cancellation rate.</div>
+              <div class="action-field"><span class="f-label">Evidence:</span> 65% of cancellations occur within 12 hours due to impulse buyer remorse with zero financial commitment.</div>
+              <div class="action-field"><span class="f-label">Prescribed Action:</span> Require SMS OTP verification for COD orders. Automatically credit $10 courtesy coupons when carrier delays occur.</div>
+              <div class="action-meta">
+                <div class="meta-item"><strong>Expected Impact:</strong> Retain $293K in gross merchandise sales by defusing buyer remorse.</div>
+                <div class="meta-item"><strong>Accountable Lead:</strong> Director of Customer Experience</div>
+                <div class="meta-item"><strong>Target KPI:</strong> Cancellation Rate &lt; 3.5%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 6: SQL & DOCUMENTATION EXPLORER -->
+    <!-- =================================================================== -->
+    <section class="tab-pane" id="tab-docs">
+      <div class="docs-explorer-container">
+        <div class="docs-sidebar">
+          <h3>Documentation Library</h3>
+          <ul class="docs-nav-list" id="docsNavList">
+            <li class="active" data-doc="sql">Production SQL Queries (32)</li>
+            <li data-doc="brd">Business Requirements (BRD)</li>
+            <li data-doc="schema">Database Relational Schema</li>
+            <li data-doc="kpi">Enterprise KPI Dictionary</li>
+            <li data-doc="uat">UAT Test Execution (16/16 Pass)</li>
+          </ul>
+        </div>
+        <div class="docs-content-area" id="docsContentArea">
+          <div class="code-header">
+            <span id="docTitle">Production SQL Queries (32 Queries Verified)</span>
+            <button id="copyCodeBtn" class="copy-btn"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <pre><code id="docCodeView" class="language-sql">-- Loading documentation...</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- TAB 7: DATA INGESTION, ATTACHMENT & DATABASE INTEGRATION -->
+    <!-- =================================================================== -->
+    <section class="tab-pane" id="tab-upload">
+      <div class="view-header">
+        <div class="view-title-block">
+          <h2>Data Ingestion & Database Integration Portal</h2>
+          <p class="view-subtitle">Attach external CSV / JSON files, input custom transaction records, or inspect and sync with the backend SQLite database.</p>
+        </div>
+        <div class="badge-row">
+          <span class="view-tag tag-blue"><i class="fa-solid fa-database"></i> SQLite 3.42+</span>
+          <span class="view-tag tag-green"><i class="fa-solid fa-file-csv"></i> CSV / JSON Ingestion</span>
+          <span class="view-tag tag-purple"><i class="fa-solid fa-bolt"></i> Real-time In-Memory Recalc</span>
+        </div>
+      </div>
+
+      <div class="ingestion-grid">
+        <!-- Card 1: File Attachment / Drag and Drop -->
+        <div class="chart-card ingestion-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title"><i class="fa-solid fa-paperclip"></i> 1. Attach Dataset File</h3>
+              <p class="chart-subtitle">Drag & drop your CSV or JSON data file to instantly visualize custom metrics</p>
+            </div>
+          </div>
+          <input type="file" id="fileAttachmentInput" accept=".xlsx, .xls, .csv, .json, .txt" class="file-hidden-input">
+          <div class="drop-zone" id="dropZoneArea">
+            <div class="drop-zone-content">
+              <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+              <h4>Drag & drop Excel (.xlsx, .xls) or CSV here</h4>
+              <p class="drop-hint">Supports Excel Workbooks (<code>.xlsx</code>, <code>.xls</code>), <code>.csv</code>, or <code>.json</code></p>
+              <div class="drop-actions-row">
+                <label for="fileAttachmentInput" class="btn-browse" id="btnBrowseFile">
+                  <i class="fa-solid fa-folder-open"></i> Browse Local Files
+                </label>
+                <button type="button" class="btn-sample-load" id="btnLoadSampleExcelFile">
+                  <i class="fa-solid fa-file-excel" style="color: #22c55e;"></i> Try Sample Excel (.xlsx)
+                </button>
+                <button type="button" class="btn-sample-load" id="btnLoadSampleCsvFile">
+                  <i class="fa-solid fa-file-csv"></i> Try Sample CSV
+                </button>
+                <a href="sample_custom_orders.xlsx" download class="btn-sample-dl">
+                  <i class="fa-solid fa-download"></i> Excel Template
+                </a>
+              </div>
+            </div>
+            <div class="file-preview-strip hidden" id="filePreviewStrip">
+              <div class="file-meta">
+                <i class="fa-solid fa-file-csv file-meta-icon"></i>
+                <div class="file-info-text">
+                  <span class="file-name" id="previewFileName">filename.csv</span>
+                  <span class="file-size" id="previewFileSize">0 KB</span>
+                  <span class="file-status-tag" id="previewFileStatus">Loaded & Active</span>
+                </div>
+              </div>
+              <div class="file-actions">
+                <button type="button" class="btn-action-sm btn-clear" id="btnClearAttachment"><i class="fa-solid fa-xmark"></i> Remove</button>
+                <button type="button" class="btn-action-sm btn-ingest" id="btnProcessAttachment"><i class="fa-solid fa-rotate"></i> Re-Process</button>
+              </div>
+            </div>
+          </div>
+          <div class="csv-format-hint">
+            <strong>Expected Columns (Flexible / Auto-detected):</strong>
+            <code>order_id</code>, <code>customer_id</code>, <code>order_date</code>, <code>total_amount</code>, <code>discount_amount</code>, <code>category</code>, <code>region</code>, <code>order_status</code>
+          </div>
+        </div>
+
+        <!-- Card 2: Direct Raw Input / Paste -->
+        <div class="chart-card ingestion-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title"><i class="fa-solid fa-keyboard"></i> 2. Direct Raw Input / Paste CSV</h3>
+              <p class="chart-subtitle">Paste raw CSV rows or transaction records directly into the parser</p>
+            </div>
+          </div>
+          <div class="paste-zone">
+            <textarea id="rawCsvTextarea" class="code-textarea" placeholder="order_id,customer_id,order_date,total_amount,discount_amount,payment_method,region,category,order_status
+ORD-CUSTOM-001,CUST-9901,2025-10-15,450.00,20.00,Credit Card,West,Electronics,Delivered
+ORD-CUSTOM-002,CUST-9902,2025-10-16,180.50,15.00,UPI,East,Apparel & Fashion,Delivered
+ORD-CUSTOM-003,CUST-9903,2025-10-17,890.00,50.00,Corporate Invoice,Central,Electronics,Delivered
+ORD-CUSTOM-004,CUST-9904,2025-10-18,65.00,5.00,Debit Card,South,Beauty & Personal Care,Returned
+ORD-CUSTOM-005,CUST-9905,2025-10-19,320.00,10.00,Credit Card,North,Home & Kitchen,Delivered"></textarea>
+            <div class="paste-actions">
+              <button type="button" id="btnLoadSamplePaste" class="btn-outline-sm"><i class="fa-solid fa-wand-magic-sparkles"></i> Load Sample Rows</button>
+              <button type="button" id="btnProcessPastedCsv" class="btn-primary-sm"><i class="fa-solid fa-play"></i> Ingest Raw Records</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Backend SQLite Database Hub -->
+        <div class="chart-card ingestion-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title"><i class="fa-solid fa-database"></i> 3. SQLite Database Integration</h3>
+              <p class="chart-subtitle">Direct connection status to local relational storage: <code>database/shopsphere.db</code></p>
+            </div>
+            <span class="db-status-badge online"><i class="fa-solid fa-circle-check"></i> Connected</span>
+          </div>
+          
+          <div class="db-metrics-table">
+            <div class="db-stat-row">
+              <span class="db-tbl-name"><i class="fa-solid fa-table"></i> orders</span>
+              <span class="db-tbl-count">102,420 rows</span>
+              <span class="db-tbl-badge">Fact Table</span>
+            </div>
+            <div class="db-stat-row">
+              <span class="db-tbl-name"><i class="fa-solid fa-table"></i> customers</span>
+              <span class="db-tbl-count">50,500 rows</span>
+              <span class="db-tbl-badge">Dimension</span>
+            </div>
+            <div class="db-stat-row">
+              <span class="db-tbl-name"><i class="fa-solid fa-table"></i> products</span>
+              <span class="db-tbl-count">525 rows</span>
+              <span class="db-tbl-badge">Dimension</span>
+            </div>
+            <div class="db-stat-row">
+              <span class="db-tbl-name"><i class="fa-solid fa-table"></i> delivery</span>
+              <span class="db-tbl-count">102,420 rows</span>
+              <span class="db-tbl-badge">Logistics Fact</span>
+            </div>
+            <div class="db-stat-row">
+              <span class="db-tbl-name"><i class="fa-solid fa-table"></i> returns</span>
+              <span class="db-tbl-count">10,594 rows</span>
+              <span class="db-tbl-badge">Returns Fact</span>
+            </div>
+          </div>
+
+          <div class="cli-command-box">
+            <div class="cli-header">
+              <span>CLI Database Sync Command (PowerShell / Terminal)</span>
+              <button class="cli-copy-btn" id="btnCopyCliCommand" title="Copy CLI Command"><i class="fa-regular fa-copy"></i></button>
+            </div>
+            <code>python python/scripts/import_custom_data.py --orders your_custom_orders.csv</code>
+          </div>
+        </div>
+
+        <!-- Card 4: Preset Business Simulation Scenarios -->
+        <div class="chart-card ingestion-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title"><i class="fa-solid fa-sliders"></i> 4. Fast Scenario Simulations</h3>
+              <p class="chart-subtitle">Switch between different commercial states with 1-click to test analytical sensitivity</p>
+            </div>
+          </div>
+          
+          <div class="scenario-buttons-grid">
+            <button type="button" class="scenario-btn active" data-scenario="baseline">
+              <div class="sc-icon blue"><i class="fa-solid fa-landmark"></i></div>
+              <div class="sc-details">
+                <strong>Master Baseline (Production)</strong>
+                <span>102.4K Orders | $24.4M Sales | 32.6% Margin</span>
+              </div>
+            </button>
+
+            <button type="button" class="scenario-btn" data-scenario="q4_surge">
+              <div class="sc-icon green"><i class="fa-solid fa-arrow-trend-up"></i></div>
+              <div class="sc-details">
+                <strong>Q4 Holiday Surge (+30% Sales)</strong>
+                <span>133K Orders | $31.8M Sales | Peak Discounting</span>
+              </div>
+            </button>
+
+            <button type="button" class="scenario-btn" data-scenario="high_returns">
+              <div class="sc-icon red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <div class="sc-details">
+                <strong>Logistics Crisis (High Returns)</strong>
+                <span>19.4% Return Rate | Delays Surge | Margin 28.1%</span>
+              </div>
+            </button>
+
+            <button type="button" class="scenario-btn" data-scenario="b2b_expansion">
+              <div class="sc-icon purple"><i class="fa-solid fa-building"></i></div>
+              <div class="sc-details">
+                <strong>Corporate B2B Wholesale Focus</strong>
+                <span>AOV $390 | Low 5.2% Returns | 38.4% Margin</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Quick Floating Attachment Modal Dialog -->
+  <div class="modal-overlay hidden" id="attachDataModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i class="fa-solid fa-file-arrow-up"></i>
+          <h3>Quick Data Ingestion & Attachment</h3>
+        </div>
+        <button class="modal-close-btn" id="closeAttachModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">Attach a custom dataset (CSV or JSON) to recompute the entire dashboard live, or pick a business scenario:</p>
+        
+        <input type="file" id="modalFileInput" accept=".xlsx, .xls, .csv, .json, .txt" class="file-hidden-input">
+        <div class="modal-upload-box" id="modalDropZone">
+          <i class="fa-solid fa-cloud-arrow-up modal-drop-icon"></i>
+          <h4>Drop custom Excel (.xlsx), CSV, or JSON here</h4>
+          <p>or <label for="modalFileInput" class="browse-link" id="modalBrowseLink">browse files</label></p>
+          <div id="modalFileInfo" class="modal-file-info hidden"></div>
+        </div>
+
+        <div class="modal-scenario-list">
+          <span class="modal-section-label">Quick Scenario Switcher:</span>
+          <div class="modal-btn-row">
+            <button class="scenario-chip active" data-scenario="baseline">Baseline (102.4K)</button>
+            <button class="scenario-chip" data-scenario="q4_surge">Q4 Surge (+30%)</button>
+            <button class="scenario-chip" data-scenario="high_returns">High Returns</button>
+            <button class="scenario-chip" data-scenario="b2b_expansion">B2B Expansion</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" id="modalCancelBtn">Cancel</button>
+        <button type="button" class="btn-primary" id="modalApplyBtn"><i class="fa-solid fa-check"></i> Apply & Refresh Views</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Toast Notification -->
+  <div id="toastNotification" class="toast-notification hidden">
+    <div class="toast-content">
+      <i class="fa-solid fa-circle-check toast-icon"></i>
+      <span id="toastMsg">Data file attached and processed successfully!</span>
+    </div>
+  </div>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 <strong>ShopSphere Analytics</strong> — Built as an End-to-End Data Analyst & Business Analyst Portfolio Project.</p>
+      <div class="footer-links">
+        <span class="f-tag"><i class="fa-solid fa-database"></i> SQLite 3 / PostgreSQL</span>
+        <span class="f-tag"><i class="fa-brands fa-python"></i> Python & Pandas</span>
+        <span class="f-tag"><i class="fa-solid fa-chart-simple"></i> Power BI & DAX</span>
+        <span class="f-tag"><i class="fa-solid fa-file-excel"></i> Advanced Excel</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

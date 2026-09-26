@@ -1,0 +1,20 @@
+================================================================
+SHOPSPHERE VERIFIED ANALYTICAL BASELINE (2023-2025)
+================================================================
+Total Registered Customers:  50,500
+Active Purchasing Customers: 27,200
+Repeat Customers:            15,122 (55.60%)
+Total Catalog SKUs:          525
+Total Processed Orders:      102,420
+Total Gross Revenue:         $26,498,021.38
+Total Net Revenue:           $24,435,345.82
+Total Product Cost (COGS):   $16,462,054.98
+Total Gross Profit:          $7,973,290.84
+Overall Gross Profit Margin: 32.63%
+Average Order Value (AOV):   $238.58
+Total Returns Logged:        10,594
+Return Rate (by Orders):     8.39%
+Cancellation Rate:           4.77%
+Late Deliveries:             11,660 (11.38%)
+Average Late Delivery Delay: 3.49 days
+================================================================

@@ -1,0 +1,526 @@
+product_id,product_name,category,subcategory,brand,unit_cost,selling_price
+PROD-0001,VoltTech Smartphones Pro 100,Electronics,Smartphones,VoltTech,917.75,893.24
+PROD-0002,VoltTech Smartphones Max 110,Electronics,Smartphones,VoltTech,796.77,772.39
+PROD-0003,ApexDigital Smartphones Pro 120,Electronics,Smartphones,ApexDigital,518.76,749.0
+PROD-0004,PulseByte Smartphones Ultra 130,Electronics,Smartphones,PulseByte,338.98,476.35
+PROD-0005,VoltTech Smartphones Plus 140,Electronics,Smartphones,VoltTech,642.99,858.51
+PROD-0006,ApexDigital Smartphones Classic 150,Electronics,Smartphones,ApexDigital,798.81,1065.77
+PROD-0007,VoltTech Smartphones Ultra 160,Electronics,Smartphones,VoltTech,253.92,377.37
+PROD-0008,PulseByte Smartphones Elite 170,Electronics,Smartphones,PulseByte,653.04,945.7
+PROD-0009,PulseByte Smartphones Max 180,Electronics,Smartphones,PulseByte,801.56,1078.49
+PROD-0010,PulseByte Smartphones Elite 190,Electronics,Smartphones,PulseByte,681.42,963.52
+PROD-0011,AuraSound Smartphones Classic 200,Electronics,Smartphones,AuraSound,684.99,863.66
+PROD-0012,ApexDigital Smartphones Elite 210,Electronics,Smartphones,ApexDigital,730.93,1088.18
+PROD-0013,VoltTech Smartphones Ultra 220,Electronics,Smartphones,VoltTech,368.09,522.38
+PROD-0014,AuraSound Smartphones Plus 230,Electronics,Smartphones,AuraSound,458.18,596.14
+PROD-0015,AuraSound Smartphones Max 240,Electronics,Smartphones,AuraSound,609.63,787.3
+PROD-0016,ApexDigital Smartphones Plus 250,Electronics,Smartphones,ApexDigital,508.73,669.81
+PROD-0017,PulseByte Smartphones Classic 260,Electronics,Smartphones,PulseByte,570.98,847.69
+PROD-0018,VoltTech Smartphones Classic 270,Electronics,Smartphones,VoltTech,650.33,957.44
+PROD-0019,NovaCore Smartphones Elite 280,Electronics,Smartphones,NovaCore,234.02,352.95
+PROD-0020,PulseByte Smartphones Prime 290,Electronics,Smartphones,PulseByte,340.88,470.1
+PROD-0021,NovaCore Smartphones Plus 300,Electronics,Smartphones,NovaCore,390.58,511.9
+PROD-0022,PulseByte Laptops Elite 100,Electronics,Laptops,PulseByte,1747.76,1769.92
+PROD-0023,AuraSound Laptops Classic 110,Electronics,Laptops,AuraSound,2185.75,2195.45
+PROD-0024,VoltTech Laptops Max 120,Electronics,Laptops,VoltTech,627.62,759.83
+PROD-0025,NovaCore Laptops Max 130,Electronics,Laptops,NovaCore,877.83,1154.1
+PROD-0026,NovaCore Laptops Elite 140,Electronics,Laptops,NovaCore,1550.5,2150.83
+PROD-0027,VoltTech Laptops Max 150,Electronics,Laptops,VoltTech,1276.46,1658.91
+PROD-0028,AuraSound Laptops Prime 160,Electronics,Laptops,AuraSound,541.22,689.64
+PROD-0029,NovaCore Laptops Pro 170,Electronics,Laptops,NovaCore,1524.55,2121.49
+PROD-0030,AuraSound Laptops Plus 180,Electronics,Laptops,AuraSound,1136.84,1363.06
+PROD-0031,AuraSound Laptops Classic 190,Electronics,Laptops,AuraSound,558.95,759.83
+PROD-0032,PulseByte Laptops Pro 200,Electronics,Laptops,PulseByte,1179.21,1518.21
+PROD-0033,VoltTech Laptops Prime 210,Electronics,Laptops,VoltTech,1446.03,1993.83
+PROD-0034,AuraSound Laptops Classic 220,Electronics,Laptops,AuraSound,429.88,598.47
+PROD-0035,VoltTech Laptops Max 230,Electronics,Laptops,VoltTech,1269.1,1744.24
+PROD-0036,PulseByte Laptops Plus 240,Electronics,Laptops,PulseByte,559.32,718.27
+PROD-0037,PulseByte Laptops Plus 250,Electronics,Laptops,PulseByte,683.61,950.6
+PROD-0038,NovaCore Laptops Classic 260,Electronics,Laptops,NovaCore,1531.73,2079.15
+PROD-0039,ApexDigital Laptops Elite 270,Electronics,Laptops,ApexDigital,882.83,1178.29
+PROD-0040,AuraSound Laptops Air 280,Electronics,Laptops,AuraSound,1587.51,2029.34
+PROD-0041,ApexDigital Laptops Classic 290,Electronics,Laptops,ApexDigital,515.59,608.84
+PROD-0042,PulseByte Laptops Classic 300,Electronics,Laptops,PulseByte,1273.68,1500.35
+PROD-0043,VoltTech Audio Classic 100,Electronics,Audio & Headphones,VoltTech,28.86,44.83
+PROD-0044,AuraSound Audio Max 110,Electronics,Audio & Headphones,AuraSound,85.05,143.11
+PROD-0045,NovaCore Audio Classic 120,Electronics,Audio & Headphones,NovaCore,75.11,148.63
+PROD-0046,PulseByte Audio Air 130,Electronics,Audio & Headphones,PulseByte,46.35,83.46
+PROD-0047,NovaCore Audio Classic 140,Electronics,Audio & Headphones,NovaCore,26.3,50.75
+PROD-0048,AuraSound Audio Ultra 150,Electronics,Audio & Headphones,AuraSound,57.48,120.44
+PROD-0049,VoltTech Audio Max 160,Electronics,Audio & Headphones,VoltTech,21.85,43.33
+PROD-0050,VoltTech Audio Classic 170,Electronics,Audio & Headphones,VoltTech,39.16,72.15
+PROD-0051,ApexDigital Audio Ultra 180,Electronics,Audio & Headphones,ApexDigital,39.23,70.37
+PROD-0052,VoltTech Audio Air 190,Electronics,Audio & Headphones,VoltTech,99.48,207.76
+PROD-0053,VoltTech Audio Pro 200,Electronics,Audio & Headphones,VoltTech,94.0,173.47
+PROD-0054,VoltTech Audio Max 210,Electronics,Audio & Headphones,VoltTech,112.28,233.8
+PROD-0055,ApexDigital Audio Ultra 220,Electronics,Audio & Headphones,ApexDigital,83.1,136.84
+PROD-0056,NovaCore Audio Pro 230,Electronics,Audio & Headphones,NovaCore,43.01,66.22
+PROD-0057,NovaCore Audio Elite 240,Electronics,Audio & Headphones,NovaCore,115.27,233.83
+PROD-0058,AuraSound Audio Ultra 250,Electronics,Audio & Headphones,AuraSound,92.34,183.25
+PROD-0059,PulseByte Audio Air 260,Electronics,Audio & Headphones,PulseByte,37.84,64.06
+PROD-0060,VoltTech Audio Pro 270,Electronics,Audio & Headphones,VoltTech,124.23,194.55
+PROD-0061,PulseByte Audio Air 280,Electronics,Audio & Headphones,PulseByte,67.43,140.63
+PROD-0062,ApexDigital Audio Pro 290,Electronics,Audio & Headphones,ApexDigital,153.02,241.37
+PROD-0063,ApexDigital Audio Max 300,Electronics,Audio & Headphones,ApexDigital,82.86,160.91
+PROD-0064,ApexDigital Wearables Ultra 100,Electronics,Wearables & Smartwatches,ApexDigital,67.05,118.36
+PROD-0065,ApexDigital Wearables Pro 110,Electronics,Wearables & Smartwatches,ApexDigital,177.25,278.2
+PROD-0066,PulseByte Wearables Prime 120,Electronics,Wearables & Smartwatches,PulseByte,253.76,379.11
+PROD-0067,AuraSound Wearables Classic 130,Electronics,Wearables & Smartwatches,AuraSound,112.26,165.0
+PROD-0068,AuraSound Wearables Air 140,Electronics,Wearables & Smartwatches,AuraSound,106.39,181.18
+PROD-0069,VoltTech Wearables Pro 150,Electronics,Wearables & Smartwatches,VoltTech,124.71,226.65
+PROD-0070,VoltTech Wearables Max 160,Electronics,Wearables & Smartwatches,VoltTech,157.3,252.04
+PROD-0071,ApexDigital Wearables Prime 170,Electronics,Wearables & Smartwatches,ApexDigital,205.59,361.88
+PROD-0072,AuraSound Wearables Elite 180,Electronics,Wearables & Smartwatches,AuraSound,75.02,130.48
+PROD-0073,AuraSound Wearables Pro 190,Electronics,Wearables & Smartwatches,AuraSound,181.17,293.72
+PROD-0074,VoltTech Wearables Plus 200,Electronics,Wearables & Smartwatches,VoltTech,93.27,164.63
+PROD-0075,PulseByte Wearables Plus 210,Electronics,Wearables & Smartwatches,PulseByte,101.84,167.15
+PROD-0076,AuraSound Wearables Classic 220,Electronics,Wearables & Smartwatches,AuraSound,171.62,300.0
+PROD-0077,PulseByte Wearables Air 230,Electronics,Wearables & Smartwatches,PulseByte,90.41,160.36
+PROD-0078,VoltTech Wearables Max 240,Electronics,Wearables & Smartwatches,VoltTech,162.88,282.97
+PROD-0079,VoltTech Wearables Pro 250,Electronics,Wearables & Smartwatches,VoltTech,127.05,186.74
+PROD-0080,AuraSound Wearables Plus 260,Electronics,Wearables & Smartwatches,AuraSound,195.78,317.19
+PROD-0081,NovaCore Wearables Pro 270,Electronics,Wearables & Smartwatches,NovaCore,64.64,115.8
+PROD-0082,ApexDigital Wearables Pro 280,Electronics,Wearables & Smartwatches,ApexDigital,212.62,347.07
+PROD-0083,ApexDigital Wearables Ultra 290,Electronics,Wearables & Smartwatches,ApexDigital,78.96,120.78
+PROD-0084,VoltTech Wearables Prime 300,Electronics,Wearables & Smartwatches,VoltTech,97.54,147.22
+PROD-0085,VoltTech Accessories Prime 100,Electronics,Accessories & Cables,VoltTech,15.84,49.01
+PROD-0086,NovaCore Accessories Plus 110,Electronics,Accessories & Cables,NovaCore,25.48,56.29
+PROD-0087,ApexDigital Accessories Plus 120,Electronics,Accessories & Cables,ApexDigital,26.77,54.07
+PROD-0088,AuraSound Accessories Ultra 130,Electronics,Accessories & Cables,AuraSound,16.4,50.11
+PROD-0089,ApexDigital Accessories Elite 140,Electronics,Accessories & Cables,ApexDigital,6.46,17.96
+PROD-0090,NovaCore Accessories Pro 150,Electronics,Accessories & Cables,NovaCore,24.11,52.93
+PROD-0091,NovaCore Accessories Prime 160,Electronics,Accessories & Cables,NovaCore,8.61,25.26
+PROD-0092,ApexDigital Accessories Classic 170,Electronics,Accessories & Cables,ApexDigital,5.16,11.18
+PROD-0093,AuraSound Accessories Elite 180,Electronics,Accessories & Cables,AuraSound,16.32,53.22
+PROD-0094,AuraSound Accessories Prime 190,Electronics,Accessories & Cables,AuraSound,17.67,42.07
+PROD-0095,PulseByte Accessories Prime 200,Electronics,Accessories & Cables,PulseByte,27.17,56.96
+PROD-0096,AuraSound Accessories Plus 210,Electronics,Accessories & Cables,AuraSound,11.84,39.03
+PROD-0097,VoltTech Accessories Max 220,Electronics,Accessories & Cables,VoltTech,17.16,39.83
+PROD-0098,AuraSound Accessories Ultra 230,Electronics,Accessories & Cables,AuraSound,16.03,40.31
+PROD-0099,NovaCore Accessories Classic 240,Electronics,Accessories & Cables,NovaCore,8.15,22.74
+PROD-0100,VoltTech Accessories Classic 250,Electronics,Accessories & Cables,VoltTech,13.71,28.21
+PROD-0101,AuraSound Accessories Prime 260,Electronics,Accessories & Cables,AuraSound,20.51,43.17
+PROD-0102,AuraSound Accessories Elite 270,Electronics,Accessories & Cables,AuraSound,18.84,43.34
+PROD-0103,AuraSound Accessories Plus 280,Electronics,Accessories & Cables,AuraSound,7.19,19.59
+PROD-0104,NovaCore Accessories Plus 290,Electronics,Accessories & Cables,NovaCore,17.94,40.78
+PROD-0105,PulseByte Accessories Pro 300,Electronics,Accessories & Cables,PulseByte,11.54,25.19
+PROD-0106,StitchWave Men's Prime 100,Apparel & Fashion,Men's Clothing,StitchWave,27.96,66.5
+PROD-0107,UrbanAura Men's Air 110,Apparel & Fashion,Men's Clothing,UrbanAura,32.52,99.37
+PROD-0108,UrbanAura Men's Max 120,Apparel & Fashion,Men's Clothing,UrbanAura,18.41,48.38
+PROD-0109,StitchWave Men's Prime 130,Apparel & Fashion,Men's Clothing,StitchWave,9.64,29.34
+PROD-0110,UrbanAura Men's Elite 140,Apparel & Fashion,Men's Clothing,UrbanAura,19.71,42.46
+PROD-0111,LuxeThread Men's Pro 150,Apparel & Fashion,Men's Clothing,LuxeThread,18.44,44.48
+PROD-0112,LuxeThread Men's Air 160,Apparel & Fashion,Men's Clothing,LuxeThread,23.76,61.44
+PROD-0113,UrbanAura Men's Ultra 170,Apparel & Fashion,Men's Clothing,UrbanAura,31.67,69.44
+PROD-0114,LuxeThread Men's Max 180,Apparel & Fashion,Men's Clothing,LuxeThread,45.07,97.84
+PROD-0115,StitchWave Men's Air 190,Apparel & Fashion,Men's Clothing,StitchWave,11.39,25.02
+PROD-0116,LuxeThread Men's Air 200,Apparel & Fashion,Men's Clothing,LuxeThread,13.88,33.33
+PROD-0117,StitchWave Men's Prime 210,Apparel & Fashion,Men's Clothing,StitchWave,39.05,115.0
+PROD-0118,StitchWave Men's Ultra 220,Apparel & Fashion,Men's Clothing,StitchWave,41.37,103.06
+PROD-0119,UrbanAura Men's Air 230,Apparel & Fashion,Men's Clothing,UrbanAura,23.71,65.01
+PROD-0120,VogueCraft Men's Air 240,Apparel & Fashion,Men's Clothing,VogueCraft,37.25,82.67
+PROD-0121,LuxeThread Men's Elite 250,Apparel & Fashion,Men's Clothing,LuxeThread,19.1,43.45
+PROD-0122,StitchWave Men's Max 260,Apparel & Fashion,Men's Clothing,StitchWave,15.51,33.84
+PROD-0123,UrbanAura Men's Classic 270,Apparel & Fashion,Men's Clothing,UrbanAura,11.27,26.42
+PROD-0124,StitchWave Men's Air 280,Apparel & Fashion,Men's Clothing,StitchWave,28.5,61.58
+PROD-0125,MetroStride Men's Ultra 290,Apparel & Fashion,Men's Clothing,MetroStride,43.62,110.48
+PROD-0126,LuxeThread Men's Ultra 300,Apparel & Fashion,Men's Clothing,LuxeThread,22.36,67.7
+PROD-0127,VogueCraft Women's Ultra 100,Apparel & Fashion,Women's Clothing,VogueCraft,38.1,131.68
+PROD-0128,MetroStride Women's Classic 110,Apparel & Fashion,Women's Clothing,MetroStride,36.6,86.03
+PROD-0129,MetroStride Women's Pro 120,Apparel & Fashion,Women's Clothing,MetroStride,25.49,73.61
+PROD-0130,MetroStride Women's Plus 130,Apparel & Fashion,Women's Clothing,MetroStride,38.51,130.06
+PROD-0131,StitchWave Women's Pro 140,Apparel & Fashion,Women's Clothing,StitchWave,50.04,138.37
+PROD-0132,LuxeThread Women's Max 150,Apparel & Fashion,Women's Clothing,LuxeThread,47.7,105.34
+PROD-0133,MetroStride Women's Plus 160,Apparel & Fashion,Women's Clothing,MetroStride,12.65,31.29
+PROD-0134,UrbanAura Women's Air 170,Apparel & Fashion,Women's Clothing,UrbanAura,21.59,65.86
+PROD-0135,MetroStride Women's Elite 180,Apparel & Fashion,Women's Clothing,MetroStride,37.32,119.0
+PROD-0136,VogueCraft Women's Max 190,Apparel & Fashion,Women's Clothing,VogueCraft,27.67,83.79
+PROD-0137,LuxeThread Women's Prime 200,Apparel & Fashion,Women's Clothing,LuxeThread,24.73,53.03
+PROD-0138,LuxeThread Women's Pro 210,Apparel & Fashion,Women's Clothing,LuxeThread,63.25,143.7
+PROD-0139,LuxeThread Women's Plus 220,Apparel & Fashion,Women's Clothing,LuxeThread,21.12,54.82
+PROD-0140,LuxeThread Women's Classic 230,Apparel & Fashion,Women's Clothing,LuxeThread,35.64,83.13
+PROD-0141,VogueCraft Women's Plus 240,Apparel & Fashion,Women's Clothing,VogueCraft,28.94,100.74
+PROD-0142,LuxeThread Women's Plus 250,Apparel & Fashion,Women's Clothing,LuxeThread,66.74,145.59
+PROD-0143,LuxeThread Women's Elite 260,Apparel & Fashion,Women's Clothing,LuxeThread,28.94,96.97
+PROD-0144,MetroStride Women's Ultra 270,Apparel & Fashion,Women's Clothing,MetroStride,62.83,142.68
+PROD-0145,StitchWave Women's Classic 280,Apparel & Fashion,Women's Clothing,StitchWave,12.28,37.74
+PROD-0146,StitchWave Women's Max 290,Apparel & Fashion,Women's Clothing,StitchWave,45.68,124.53
+PROD-0147,LuxeThread Women's Prime 300,Apparel & Fashion,Women's Clothing,LuxeThread,31.85,91.59
+PROD-0148,LuxeThread Footwear Prime 100,Apparel & Fashion,Footwear,LuxeThread,19.46,41.77
+PROD-0149,MetroStride Footwear Max 110,Apparel & Fashion,Footwear,MetroStride,48.09,100.69
+PROD-0150,MetroStride Footwear Plus 120,Apparel & Fashion,Footwear,MetroStride,40.72,100.97
+PROD-0151,VogueCraft Footwear Air 130,Apparel & Fashion,Footwear,VogueCraft,40.44,105.08
+PROD-0152,StitchWave Footwear Elite 140,Apparel & Fashion,Footwear,StitchWave,42.64,85.12
+PROD-0153,LuxeThread Footwear Elite 150,Apparel & Fashion,Footwear,Generic / Store Brand,81.92,163.43
+PROD-0154,MetroStride Footwear Ultra 160,Apparel & Fashion,Footwear,MetroStride,39.29,87.1
+PROD-0155,VogueCraft Footwear Plus 170,Apparel & Fashion,Footwear,VogueCraft,51.86,108.26
+PROD-0156,VogueCraft Footwear Prime 180,Apparel & Fashion,Footwear,VogueCraft,34.1,79.15
+PROD-0157,VogueCraft Footwear Pro 190,Apparel & Fashion,Footwear,VogueCraft,57.49,112.33
+PROD-0158,UrbanAura Footwear Ultra 200,Apparel & Fashion,Footwear,UrbanAura,43.18,108.4
+PROD-0159,MetroStride Footwear Air 210,Apparel & Fashion,Footwear,MetroStride,56.15,102.74
+PROD-0160,VogueCraft Footwear Classic 220,Apparel & Fashion,Footwear,VogueCraft,48.44,96.62
+PROD-0161,StitchWave Footwear Prime 230,Apparel & Fashion,Footwear,StitchWave,47.16,106.26
+PROD-0162,MetroStride Footwear Prime 240,Apparel & Fashion,Footwear,MetroStride,40.99,89.25
+PROD-0163,VogueCraft Footwear Elite 250,Apparel & Fashion,Footwear,VogueCraft,29.33,72.28
+PROD-0164,VogueCraft Footwear Max 260,Apparel & Fashion,Footwear,VogueCraft,51.81,144.0
+PROD-0165,UrbanAura Footwear Classic 270,Apparel & Fashion,Footwear,UrbanAura,31.85,70.29
+PROD-0166,StitchWave Footwear Elite 280,Apparel & Fashion,Footwear,StitchWave,67.98,177.27
+PROD-0167,VogueCraft Footwear Classic 290,Apparel & Fashion,Footwear,VogueCraft,44.31,90.52
+PROD-0168,StitchWave Footwear Plus 300,Apparel & Fashion,Footwear,StitchWave,27.84,78.4
+PROD-0169,StitchWave Bags Elite 100,Apparel & Fashion,Bags & Luggage,StitchWave,74.63,150.07
+PROD-0170,MetroStride Bags Max 110,Apparel & Fashion,Bags & Luggage,MetroStride,74.58,179.0
+PROD-0171,MetroStride Bags Air 120,Apparel & Fashion,Bags & Luggage,MetroStride,52.42,107.68
+PROD-0172,LuxeThread Bags Elite 130,Apparel & Fashion,Bags & Luggage,LuxeThread,82.58,190.28
+PROD-0173,LuxeThread Bags Ultra 140,Apparel & Fashion,Bags & Luggage,LuxeThread,48.33,116.14
+PROD-0174,LuxeThread Bags Plus 150,Apparel & Fashion,Bags & Luggage,LuxeThread,24.96,59.62
+PROD-0175,VogueCraft Bags Max 160,Apparel & Fashion,Bags & Luggage,VogueCraft,99.24,199.0
+PROD-0176,MetroStride Bags Classic 170,Apparel & Fashion,Bags & Luggage,MetroStride,73.6,162.99
+PROD-0177,MetroStride Bags Elite 180,Apparel & Fashion,Bags & Luggage,MetroStride,60.47,176.93
+PROD-0178,VogueCraft Bags Pro 190,Apparel & Fashion,Bags & Luggage,VogueCraft,52.44,135.59
+PROD-0179,UrbanAura Bags Classic 200,Apparel & Fashion,Bags & Luggage,UrbanAura,39.76,78.67
+PROD-0180,UrbanAura Bags Plus 210,Apparel & Fashion,Bags & Luggage,UrbanAura,62.01,126.08
+PROD-0181,MetroStride Bags Air 220,Apparel & Fashion,Bags & Luggage,MetroStride,64.77,148.75
+PROD-0182,LuxeThread Bags Classic 230,Apparel & Fashion,Bags & Luggage,LuxeThread,38.72,82.54
+PROD-0183,MetroStride Bags Max 240,Apparel & Fashion,Bags & Luggage,MetroStride,52.5,148.42
+PROD-0184,StitchWave Bags Classic 250,Apparel & Fashion,Bags & Luggage,StitchWave,44.37,105.15
+PROD-0185,UrbanAura Bags Elite 260,Apparel & Fashion,Bags & Luggage,UrbanAura,86.92,171.39
+PROD-0186,UrbanAura Bags Elite 270,Apparel & Fashion,Bags & Luggage,UrbanAura,49.49,133.18
+PROD-0187,VogueCraft Bags Air 280,Apparel & Fashion,Bags & Luggage,VogueCraft,21.99,55.52
+PROD-0188,MetroStride Bags Elite 290,Apparel & Fashion,Bags & Luggage,MetroStride,50.69,117.58
+PROD-0189,LuxeThread Bags Pro 300,Apparel & Fashion,Bags & Luggage,Generic / Store Brand,70.48,181.75
+PROD-0190,StitchWave Fashion Elite 100,Apparel & Fashion,Fashion Accessories,StitchWave,6.69,16.55
+PROD-0191,StitchWave Fashion Pro 110,Apparel & Fashion,Fashion Accessories,StitchWave,23.66,74.97
+PROD-0192,VogueCraft Fashion Pro 120,Apparel & Fashion,Fashion Accessories,VogueCraft,25.23,60.79
+PROD-0193,StitchWave Fashion Air 130,Apparel & Fashion,Fashion Accessories,StitchWave,28.94,69.96
+PROD-0194,StitchWave Fashion Ultra 140,Apparel & Fashion,Fashion Accessories,StitchWave,18.67,53.09
+PROD-0195,LuxeThread Fashion Air 150,Apparel & Fashion,Fashion Accessories,LuxeThread,13.75,35.88
+PROD-0196,LuxeThread Fashion Plus 160,Apparel & Fashion,Fashion Accessories,LuxeThread,10.83,34.79
+PROD-0197,VogueCraft Fashion Ultra 170,Apparel & Fashion,Fashion Accessories,VogueCraft,21.69,63.81
+PROD-0198,MetroStride Fashion Max 180,Apparel & Fashion,Fashion Accessories,MetroStride,13.05,33.87
+PROD-0199,MetroStride Fashion Pro 190,Apparel & Fashion,Fashion Accessories,MetroStride,18.6,54.46
+PROD-0200,MetroStride Fashion Pro 200,Apparel & Fashion,Fashion Accessories,MetroStride,9.91,26.25
+PROD-0201,MetroStride Fashion Air 210,Apparel & Fashion,Fashion Accessories,MetroStride,24.8,60.6
+PROD-0202,StitchWave Fashion Plus 220,Apparel & Fashion,Fashion Accessories,StitchWave,25.61,70.66
+PROD-0203,MetroStride Fashion Max 230,Apparel & Fashion,Fashion Accessories,MetroStride,5.42,16.73
+PROD-0204,UrbanAura Fashion Plus 240,Apparel & Fashion,Fashion Accessories,UrbanAura,15.05,33.65
+PROD-0205,MetroStride Fashion Max 250,Apparel & Fashion,Fashion Accessories,MetroStride,8.02,28.48
+PROD-0206,LuxeThread Fashion Air 260,Apparel & Fashion,Fashion Accessories,LuxeThread,23.02,71.82
+PROD-0207,UrbanAura Fashion Air 270,Apparel & Fashion,Fashion Accessories,UrbanAura,27.79,70.96
+PROD-0208,VogueCraft Fashion Ultra 280,Apparel & Fashion,Fashion Accessories,VogueCraft,16.53,65.08
+PROD-0209,UrbanAura Fashion Air 290,Apparel & Fashion,Fashion Accessories,UrbanAura,17.95,48.08
+PROD-0210,StitchWave Fashion Plus 300,Apparel & Fashion,Fashion Accessories,StitchWave,26.39,66.84
+PROD-0211,HavenLiving Cookware Prime 100,Home & Kitchen,Cookware,HavenLiving,89.13,170.14
+PROD-0212,HomeCraft Cookware Elite 110,Home & Kitchen,Cookware,HomeCraft,65.9,138.91
+PROD-0213,PureOrigin Cookware Air 120,Home & Kitchen,Cookware,PureOrigin,85.17,159.79
+PROD-0214,HavenLiving Cookware Prime 130,Home & Kitchen,Cookware,HavenLiving,38.78,79.87
+PROD-0215,HavenLiving Cookware Air 140,Home & Kitchen,Cookware,HavenLiving,79.79,169.93
+PROD-0216,ChefElite Cookware Ultra 150,Home & Kitchen,Cookware,ChefElite,31.45,65.03
+PROD-0217,HomeCraft Cookware Prime 160,Home & Kitchen,Cookware,HomeCraft,70.04,141.71
+PROD-0218,HavenLiving Cookware Ultra 170,Home & Kitchen,Cookware,HavenLiving,85.77,178.26
+PROD-0219,ChefElite Cookware Air 180,Home & Kitchen,Cookware,ChefElite,101.52,174.72
+PROD-0220,PureOrigin Cookware Prime 190,Home & Kitchen,Cookware,PureOrigin,75.24,160.46
+PROD-0221,HavenLiving Cookware Max 200,Home & Kitchen,Cookware,HavenLiving,57.87,108.89
+PROD-0222,ChefElite Cookware Ultra 210,Home & Kitchen,Cookware,ChefElite,73.01,160.64
+PROD-0223,HomeCraft Cookware Air 220,Home & Kitchen,Cookware,HomeCraft,82.49,147.23
+PROD-0224,PureOrigin Cookware Ultra 230,Home & Kitchen,Cookware,PureOrigin,60.2,127.48
+PROD-0225,PureOrigin Cookware Ultra 240,Home & Kitchen,Cookware,PureOrigin,87.6,173.12
+PROD-0226,HavenLiving Cookware Pro 250,Home & Kitchen,Cookware,HavenLiving,69.25,122.62
+PROD-0227,CozyNest Cookware Classic 260,Home & Kitchen,Cookware,CozyNest,75.96,142.01
+PROD-0228,HomeCraft Cookware Max 270,Home & Kitchen,Cookware,HomeCraft,47.88,96.55
+PROD-0229,HomeCraft Cookware Pro 280,Home & Kitchen,Cookware,HomeCraft,46.53,78.66
+PROD-0230,CozyNest Cookware Prime 290,Home & Kitchen,Cookware,CozyNest,53.29,94.6
+PROD-0231,HavenLiving Cookware Plus 300,Home & Kitchen,Cookware,HavenLiving,32.64,55.5
+PROD-0232,HavenLiving Small Classic 100,Home & Kitchen,Small Kitchen Appliances,HavenLiving,95.69,147.02
+PROD-0233,ChefElite Small Air 110,Home & Kitchen,Small Kitchen Appliances,ChefElite,118.1,175.77
+PROD-0234,HomeCraft Small Air 120,Home & Kitchen,Small Kitchen Appliances,HomeCraft,145.85,229.75
+PROD-0235,ChefElite Small Max 130,Home & Kitchen,Small Kitchen Appliances,ChefElite,93.7,135.55
+PROD-0236,PureOrigin Small Elite 140,Home & Kitchen,Small Kitchen Appliances,PureOrigin,119.29,175.98
+PROD-0237,CozyNest Small Air 150,Home & Kitchen,Small Kitchen Appliances,CozyNest,156.32,218.29
+PROD-0238,HavenLiving Small Air 160,Home & Kitchen,Small Kitchen Appliances,HavenLiving,45.81,66.86
+PROD-0239,CozyNest Small Elite 170,Home & Kitchen,Small Kitchen Appliances,CozyNest,173.9,248.5
+PROD-0240,HavenLiving Small Elite 180,Home & Kitchen,Small Kitchen Appliances,HavenLiving,28.13,46.66
+PROD-0241,HomeCraft Small Air 190,Home & Kitchen,Small Kitchen Appliances,HomeCraft,128.68,215.73
+PROD-0242,ChefElite Small Prime 200,Home & Kitchen,Small Kitchen Appliances,ChefElite,64.52,89.9
+PROD-0243,CozyNest Small Plus 210,Home & Kitchen,Small Kitchen Appliances,CozyNest,103.65,173.79
+PROD-0244,HomeCraft Small Elite 220,Home & Kitchen,Small Kitchen Appliances,HomeCraft,153.83,206.67
+PROD-0245,CozyNest Small Plus 230,Home & Kitchen,Small Kitchen Appliances,CozyNest,44.43,63.48
+PROD-0246,HavenLiving Small Plus 240,Home & Kitchen,Small Kitchen Appliances,HavenLiving,53.1,86.16
+PROD-0247,CozyNest Small Elite 250,Home & Kitchen,Small Kitchen Appliances,CozyNest,152.03,215.25
+PROD-0248,HavenLiving Small Elite 260,Home & Kitchen,Small Kitchen Appliances,HavenLiving,137.13,198.04
+PROD-0249,HomeCraft Small Air 270,Home & Kitchen,Small Kitchen Appliances,HomeCraft,175.99,242.39
+PROD-0250,ChefElite Small Ultra 280,Home & Kitchen,Small Kitchen Appliances,ChefElite,149.19,243.29
+PROD-0251,CozyNest Small Max 290,Home & Kitchen,Small Kitchen Appliances,CozyNest,154.83,207.09
+PROD-0252,PureOrigin Small Max 300,Home & Kitchen,Small Kitchen Appliances,PureOrigin,87.86,138.23
+PROD-0253,CozyNest Home Ultra 100,Home & Kitchen,Home Decor,CozyNest,25.2,80.79
+PROD-0254,HomeCraft Home Classic 110,Home & Kitchen,Home Decor,HomeCraft,19.83,52.72
+PROD-0255,PureOrigin Home Prime 120,Home & Kitchen,Home Decor,PureOrigin,40.2,88.22
+PROD-0256,HomeCraft Home Air 130,Home & Kitchen,Home Decor,HomeCraft,38.57,87.75
+PROD-0257,HavenLiving Home Max 140,Home & Kitchen,Home Decor,HavenLiving,8.14,26.18
+PROD-0258,CozyNest Home Air 150,Home & Kitchen,Home Decor,CozyNest,11.0,24.29
+PROD-0259,PureOrigin Home Plus 160,Home & Kitchen,Home Decor,PureOrigin,19.63,46.09
+PROD-0260,PureOrigin Home Ultra 170,Home & Kitchen,Home Decor,PureOrigin,21.99,61.99
+PROD-0261,HavenLiving Home Max 180,Home & Kitchen,Home Decor,HavenLiving,30.79,81.7
+PROD-0262,CozyNest Home Pro 190,Home & Kitchen,Home Decor,CozyNest,32.06,70.22
+PROD-0263,HavenLiving Home Classic 200,Home & Kitchen,Home Decor,HavenLiving,40.06,83.44
+PROD-0264,CozyNest Home Prime 210,Home & Kitchen,Home Decor,CozyNest,8.83,19.84
+PROD-0265,HomeCraft Home Air 220,Home & Kitchen,Home Decor,HomeCraft,10.22,22.33
+PROD-0266,PureOrigin Home Pro 230,Home & Kitchen,Home Decor,PureOrigin,8.25,19.05
+PROD-0267,ChefElite Home Classic 240,Home & Kitchen,Home Decor,ChefElite,7.11,20.49
+PROD-0268,ChefElite Home Classic 250,Home & Kitchen,Home Decor,ChefElite,36.29,80.04
+PROD-0269,ChefElite Home Pro 260,Home & Kitchen,Home Decor,ChefElite,11.27,37.18
+PROD-0270,ChefElite Home Elite 270,Home & Kitchen,Home Decor,ChefElite,37.71,78.88
+PROD-0271,HomeCraft Home Plus 280,Home & Kitchen,Home Decor,HomeCraft,5.54,16.19
+PROD-0272,ChefElite Home Prime 290,Home & Kitchen,Home Decor,ChefElite,7.27,16.26
+PROD-0273,ChefElite Home Ultra 300,Home & Kitchen,Home Decor,ChefElite,20.03,57.09
+PROD-0274,HavenLiving Bedding Air 100,Home & Kitchen,Bedding & Bath,HavenLiving,52.97,114.47
+PROD-0275,HomeCraft Bedding Air 110,Home & Kitchen,Bedding & Bath,HomeCraft,32.29,82.94
+PROD-0276,HomeCraft Bedding Elite 120,Home & Kitchen,Bedding & Bath,HomeCraft,29.99,77.67
+PROD-0277,HomeCraft Bedding Air 130,Home & Kitchen,Bedding & Bath,HomeCraft,58.47,122.44
+PROD-0278,HomeCraft Bedding Air 140,Home & Kitchen,Bedding & Bath,HomeCraft,50.75,106.93
+PROD-0279,HomeCraft Bedding Prime 150,Home & Kitchen,Bedding & Bath,HomeCraft,51.16,94.95
+PROD-0280,CozyNest Bedding Prime 160,Home & Kitchen,Bedding & Bath,CozyNest,30.85,68.8
+PROD-0281,CozyNest Bedding Air 170,Home & Kitchen,Bedding & Bath,CozyNest,39.65,83.14
+PROD-0282,HomeCraft Bedding Classic 180,Home & Kitchen,Bedding & Bath,HomeCraft,29.71,74.46
+PROD-0283,HavenLiving Bedding Prime 190,Home & Kitchen,Bedding & Bath,HavenLiving,57.94,120.15
+PROD-0284,HomeCraft Bedding Prime 200,Home & Kitchen,Bedding & Bath,HomeCraft,32.37,74.08
+PROD-0285,CozyNest Bedding Plus 210,Home & Kitchen,Bedding & Bath,CozyNest,48.81,103.98
+PROD-0286,HomeCraft Bedding Max 220,Home & Kitchen,Bedding & Bath,HomeCraft,19.06,35.72
+PROD-0287,CozyNest Bedding Plus 230,Home & Kitchen,Bedding & Bath,CozyNest,40.07,88.98
+PROD-0288,PureOrigin Bedding Prime 240,Home & Kitchen,Bedding & Bath,PureOrigin,49.0,102.05
+PROD-0289,HavenLiving Bedding Pro 250,Home & Kitchen,Bedding & Bath,HavenLiving,61.08,136.37
+PROD-0290,CozyNest Bedding Max 260,Home & Kitchen,Bedding & Bath,CozyNest,47.0,91.46
+PROD-0291,HavenLiving Bedding Classic 270,Home & Kitchen,Bedding & Bath,HavenLiving,60.05,122.44
+PROD-0292,PureOrigin Bedding Prime 280,Home & Kitchen,Bedding & Bath,PureOrigin,19.21,38.21
+PROD-0293,ChefElite Bedding Ultra 290,Home & Kitchen,Bedding & Bath,ChefElite,46.96,122.19
+PROD-0294,PureOrigin Bedding Pro 300,Home & Kitchen,Bedding & Bath,PureOrigin,41.64,95.03
+PROD-0295,CozyNest Storage Pro 100,Home & Kitchen,Storage & Organization,CozyNest,9.59,21.56
+PROD-0296,CozyNest Storage Prime 110,Home & Kitchen,Storage & Organization,CozyNest,16.0,30.6
+PROD-0297,ChefElite Storage Ultra 120,Home & Kitchen,Storage & Organization,ChefElite,6.89,15.69
+PROD-0298,HomeCraft Storage Max 130,Home & Kitchen,Storage & Organization,HomeCraft,26.68,51.54
+PROD-0299,HavenLiving Storage Air 140,Home & Kitchen,Storage & Organization,HavenLiving,14.87,30.07
+PROD-0300,CozyNest Storage Max 150,Home & Kitchen,Storage & Organization,CozyNest,30.98,58.82
+PROD-0301,PureOrigin Storage Pro 160,Home & Kitchen,Storage & Organization,PureOrigin,24.3,47.72
+PROD-0302,HavenLiving Storage Air 170,Home & Kitchen,Storage & Organization,HavenLiving,21.55,44.18
+PROD-0303,ChefElite Storage Max 180,Home & Kitchen,Storage & Organization,ChefElite,16.16,30.29
+PROD-0304,PureOrigin Storage Air 190,Home & Kitchen,Storage & Organization,PureOrigin,20.11,39.93
+PROD-0305,ChefElite Storage Ultra 200,Home & Kitchen,Storage & Organization,ChefElite,34.77,64.18
+PROD-0306,ChefElite Storage Elite 210,Home & Kitchen,Storage & Organization,ChefElite,27.01,62.1
+PROD-0307,CozyNest Storage Elite 220,Home & Kitchen,Storage & Organization,CozyNest,16.13,29.39
+PROD-0308,HavenLiving Storage Plus 230,Home & Kitchen,Storage & Organization,Generic / Store Brand,8.86,18.85
+PROD-0309,ChefElite Storage Prime 240,Home & Kitchen,Storage & Organization,ChefElite,6.66,15.82
+PROD-0310,HomeCraft Storage Ultra 250,Home & Kitchen,Storage & Organization,HomeCraft,5.35,12.99
+PROD-0311,CozyNest Storage Ultra 260,Home & Kitchen,Storage & Organization,CozyNest,18.8,42.39
+PROD-0312,HavenLiving Storage Elite 270,Home & Kitchen,Storage & Organization,HavenLiving,9.9,18.1
+PROD-0313,CozyNest Storage Plus 280,Home & Kitchen,Storage & Organization,CozyNest,24.91,54.47
+PROD-0314,CozyNest Storage Max 290,Home & Kitchen,Storage & Organization,CozyNest,18.77,35.15
+PROD-0315,HavenLiving Storage Ultra 300,Home & Kitchen,Storage & Organization,HavenLiving,19.51,39.77
+PROD-0316,AromaLux Skincare Prime 100,Beauty & Personal Care,Skincare,AromaLux,7.45,30.51
+PROD-0317,GlowEssence Skincare Max 110,Beauty & Personal Care,Skincare,GlowEssence,18.83,52.14
+PROD-0318,AromaLux Skincare Prime 120,Beauty & Personal Care,Skincare,AromaLux,15.57,65.92
+PROD-0319,DermaPure Skincare Classic 130,Beauty & Personal Care,Skincare,DermaPure,7.74,22.2
+PROD-0320,DermaPure Skincare Plus 140,Beauty & Personal Care,Skincare,DermaPure,18.34,68.22
+PROD-0321,DermaPure Skincare Air 150,Beauty & Personal Care,Skincare,DermaPure,13.64,47.48
+PROD-0322,VitalCare Skincare Air 160,Beauty & Personal Care,Skincare,VitalCare,14.01,62.68
+PROD-0323,VitalCare Skincare Prime 170,Beauty & Personal Care,Skincare,VitalCare,20.73,75.5
+PROD-0324,DermaPure Skincare Air 180,Beauty & Personal Care,Skincare,DermaPure,6.16,19.78
+PROD-0325,AromaLux Skincare Elite 190,Beauty & Personal Care,Skincare,AromaLux,18.59,56.4
+PROD-0326,GlowEssence Skincare Elite 200,Beauty & Personal Care,Skincare,GlowEssence,18.57,47.32
+PROD-0327,AromaLux Skincare Elite 210,Beauty & Personal Care,Skincare,AromaLux,4.63,20.37
+PROD-0328,GlowEssence Skincare Ultra 220,Beauty & Personal Care,Skincare,GlowEssence,13.7,47.39
+PROD-0329,GlowEssence Skincare Air 230,Beauty & Personal Care,Skincare,GlowEssence,22.46,78.63
+PROD-0330,DermaPure Skincare Prime 240,Beauty & Personal Care,Skincare,DermaPure,17.19,57.35
+PROD-0331,GlowEssence Skincare Air 250,Beauty & Personal Care,Skincare,GlowEssence,4.9,22.25
+PROD-0332,AromaLux Skincare Max 260,Beauty & Personal Care,Skincare,AromaLux,18.39,50.32
+PROD-0333,DermaPure Skincare Air 270,Beauty & Personal Care,Skincare,DermaPure,24.9,84.37
+PROD-0334,VitalCare Skincare Plus 280,Beauty & Personal Care,Skincare,VitalCare,8.76,40.47
+PROD-0335,SilkVelvet Skincare Ultra 290,Beauty & Personal Care,Skincare,SilkVelvet,18.29,69.21
+PROD-0336,GlowEssence Skincare Prime 300,Beauty & Personal Care,Skincare,GlowEssence,7.47,19.61
+PROD-0337,SilkVelvet Haircare Elite 100,Beauty & Personal Care,Haircare,SilkVelvet,6.02,24.1
+PROD-0338,VitalCare Haircare Plus 110,Beauty & Personal Care,Haircare,VitalCare,8.5,28.0
+PROD-0339,DermaPure Haircare Prime 120,Beauty & Personal Care,Haircare,DermaPure,7.77,26.89
+PROD-0340,SilkVelvet Haircare Plus 130,Beauty & Personal Care,Haircare,SilkVelvet,9.43,40.56
+PROD-0341,AromaLux Haircare Ultra 140,Beauty & Personal Care,Haircare,AromaLux,15.2,42.89
+PROD-0342,DermaPure Haircare Max 150,Beauty & Personal Care,Haircare,DermaPure,14.42,43.01
+PROD-0343,AromaLux Haircare Pro 160,Beauty & Personal Care,Haircare,AromaLux,11.29,29.4
+PROD-0344,DermaPure Haircare Prime 170,Beauty & Personal Care,Haircare,DermaPure,18.55,57.49
+PROD-0345,DermaPure Haircare Plus 180,Beauty & Personal Care,Haircare,DermaPure,7.01,19.44
+PROD-0346,GlowEssence Haircare Pro 190,Beauty & Personal Care,Haircare,GlowEssence,10.71,43.77
+PROD-0347,VitalCare Haircare Plus 200,Beauty & Personal Care,Haircare,VitalCare,15.83,40.67
+PROD-0348,DermaPure Haircare Plus 210,Beauty & Personal Care,Haircare,DermaPure,19.17,46.62
+PROD-0349,AromaLux Haircare Classic 220,Beauty & Personal Care,Haircare,AromaLux,17.44,58.54
+PROD-0350,SilkVelvet Haircare Classic 230,Beauty & Personal Care,Haircare,SilkVelvet,13.48,37.63
+PROD-0351,SilkVelvet Haircare Classic 240,Beauty & Personal Care,Haircare,SilkVelvet,6.84,29.66
+PROD-0352,SilkVelvet Haircare Air 250,Beauty & Personal Care,Haircare,SilkVelvet,12.94,48.93
+PROD-0353,VitalCare Haircare Ultra 260,Beauty & Personal Care,Haircare,VitalCare,14.98,58.38
+PROD-0354,VitalCare Haircare Plus 270,Beauty & Personal Care,Haircare,VitalCare,22.08,53.9
+PROD-0355,SilkVelvet Haircare Prime 280,Beauty & Personal Care,Haircare,SilkVelvet,15.43,38.62
+PROD-0356,VitalCare Haircare Max 290,Beauty & Personal Care,Haircare,VitalCare,6.87,25.68
+PROD-0357,AromaLux Haircare Air 300,Beauty & Personal Care,Haircare,AromaLux,21.65,55.45
+PROD-0358,SilkVelvet Fragrance Max 100,Beauty & Personal Care,Fragrance,SilkVelvet,46.85,153.3
+PROD-0359,SilkVelvet Fragrance Prime 110,Beauty & Personal Care,Fragrance,SilkVelvet,40.4,151.31
+PROD-0360,SilkVelvet Fragrance Prime 120,Beauty & Personal Care,Fragrance,SilkVelvet,9.74,64.47
+PROD-0361,AromaLux Fragrance Classic 130,Beauty & Personal Care,Fragrance,AromaLux,6.31,38.52
+PROD-0362,AromaLux Fragrance Plus 140,Beauty & Personal Care,Fragrance,AromaLux,15.27,52.2
+PROD-0363,SilkVelvet Fragrance Plus 150,Beauty & Personal Care,Fragrance,SilkVelvet,33.27,129.86
+PROD-0364,VitalCare Fragrance Pro 160,Beauty & Personal Care,Fragrance,VitalCare,51.32,148.23
+PROD-0365,DermaPure Fragrance Plus 170,Beauty & Personal Care,Fragrance,DermaPure,21.19,103.6
+PROD-0366,VitalCare Fragrance Ultra 180,Beauty & Personal Care,Fragrance,VitalCare,14.3,48.9
+PROD-0367,AromaLux Fragrance Max 190,Beauty & Personal Care,Fragrance,AromaLux,10.9,40.97
+PROD-0368,VitalCare Fragrance Air 200,Beauty & Personal Care,Fragrance,VitalCare,7.83,42.85
+PROD-0369,SilkVelvet Fragrance Pro 210,Beauty & Personal Care,Fragrance,SilkVelvet,26.79,113.99
+PROD-0370,DermaPure Fragrance Elite 220,Beauty & Personal Care,Fragrance,DermaPure,20.13,88.65
+PROD-0371,DermaPure Fragrance Ultra 230,Beauty & Personal Care,Fragrance,DermaPure,12.64,58.41
+PROD-0372,VitalCare Fragrance Prime 240,Beauty & Personal Care,Fragrance,VitalCare,10.64,43.46
+PROD-0373,VitalCare Fragrance Pro 250,Beauty & Personal Care,Fragrance,VitalCare,21.45,83.81
+PROD-0374,SilkVelvet Fragrance Prime 260,Beauty & Personal Care,Fragrance,SilkVelvet,23.13,66.71
+PROD-0375,GlowEssence Fragrance Prime 270,Beauty & Personal Care,Fragrance,GlowEssence,14.24,65.14
+PROD-0376,GlowEssence Fragrance Prime 280,Beauty & Personal Care,Fragrance,GlowEssence,14.45,51.68
+PROD-0377,AromaLux Fragrance Plus 290,Beauty & Personal Care,Fragrance,AromaLux,29.57,138.8
+PROD-0378,SilkVelvet Fragrance Plus 300,Beauty & Personal Care,Fragrance,SilkVelvet,46.03,136.44
+PROD-0379,SilkVelvet Personal Pro 100,Beauty & Personal Care,Personal Hygiene,SilkVelvet,9.41,17.39
+PROD-0380,DermaPure Personal Pro 110,Beauty & Personal Care,Personal Hygiene,DermaPure,8.83,18.1
+PROD-0381,SilkVelvet Personal Air 120,Beauty & Personal Care,Personal Hygiene,SilkVelvet,6.43,16.11
+PROD-0382,DermaPure Personal Elite 130,Beauty & Personal Care,Personal Hygiene,DermaPure,7.65,19.42
+PROD-0383,AromaLux Personal Elite 140,Beauty & Personal Care,Personal Hygiene,AromaLux,5.71,11.98
+PROD-0384,SilkVelvet Personal Air 150,Beauty & Personal Care,Personal Hygiene,SilkVelvet,17.31,36.63
+PROD-0385,DermaPure Personal Air 160,Beauty & Personal Care,Personal Hygiene,DermaPure,14.37,30.15
+PROD-0386,VitalCare Personal Elite 170,Beauty & Personal Care,Personal Hygiene,Generic / Store Brand,13.61,33.64
+PROD-0387,GlowEssence Personal Ultra 180,Beauty & Personal Care,Personal Hygiene,GlowEssence,10.52,27.28
+PROD-0388,VitalCare Personal Elite 190,Beauty & Personal Care,Personal Hygiene,VitalCare,9.76,18.28
+PROD-0389,AromaLux Personal Elite 200,Beauty & Personal Care,Personal Hygiene,AromaLux,9.05,22.27
+PROD-0390,DermaPure Personal Air 210,Beauty & Personal Care,Personal Hygiene,DermaPure,10.42,19.25
+PROD-0391,AromaLux Personal Ultra 220,Beauty & Personal Care,Personal Hygiene,AromaLux,5.94,16.79
+PROD-0392,GlowEssence Personal Max 230,Beauty & Personal Care,Personal Hygiene,GlowEssence,13.82,29.48
+PROD-0393,VitalCare Personal Plus 240,Beauty & Personal Care,Personal Hygiene,VitalCare,20.07,38.49
+PROD-0394,VitalCare Personal Air 250,Beauty & Personal Care,Personal Hygiene,VitalCare,4.89,9.11
+PROD-0395,AromaLux Personal Prime 260,Beauty & Personal Care,Personal Hygiene,AromaLux,8.84,20.25
+PROD-0396,VitalCare Personal Plus 270,Beauty & Personal Care,Personal Hygiene,VitalCare,10.71,29.73
+PROD-0397,AromaLux Personal Air 280,Beauty & Personal Care,Personal Hygiene,AromaLux,14.11,32.42
+PROD-0398,VitalCare Personal Prime 290,Beauty & Personal Care,Personal Hygiene,VitalCare,8.71,20.74
+PROD-0399,DermaPure Personal Max 300,Beauty & Personal Care,Personal Hygiene,DermaPure,4.53,8.83
+PROD-0400,VitalCare Wellness Ultra 100,Beauty & Personal Care,Wellness & Grooming,VitalCare,38.24,83.78
+PROD-0401,AromaLux Wellness Air 110,Beauty & Personal Care,Wellness & Grooming,AromaLux,11.96,33.45
+PROD-0402,SilkVelvet Wellness Classic 120,Beauty & Personal Care,Wellness & Grooming,SilkVelvet,8.3,26.83
+PROD-0403,SilkVelvet Wellness Plus 130,Beauty & Personal Care,Wellness & Grooming,SilkVelvet,32.33,82.7
+PROD-0404,GlowEssence Wellness Prime 140,Beauty & Personal Care,Wellness & Grooming,GlowEssence,22.34,66.08
+PROD-0405,VitalCare Wellness Elite 150,Beauty & Personal Care,Wellness & Grooming,VitalCare,25.45,82.18
+PROD-0406,DermaPure Wellness Prime 160,Beauty & Personal Care,Wellness & Grooming,DermaPure,24.9,54.63
+PROD-0407,DermaPure Wellness Plus 170,Beauty & Personal Care,Wellness & Grooming,DermaPure,13.36,35.05
+PROD-0408,AromaLux Wellness Prime 180,Beauty & Personal Care,Wellness & Grooming,AromaLux,14.64,51.65
+PROD-0409,DermaPure Wellness Max 190,Beauty & Personal Care,Wellness & Grooming,DermaPure,9.1,22.73
+PROD-0410,SilkVelvet Wellness Ultra 200,Beauty & Personal Care,Wellness & Grooming,SilkVelvet,23.14,73.38
+PROD-0411,GlowEssence Wellness Plus 210,Beauty & Personal Care,Wellness & Grooming,GlowEssence,30.94,88.01
+PROD-0412,SilkVelvet Wellness Air 220,Beauty & Personal Care,Wellness & Grooming,SilkVelvet,27.53,66.97
+PROD-0413,VitalCare Wellness Plus 230,Beauty & Personal Care,Wellness & Grooming,VitalCare,33.28,73.28
+PROD-0414,VitalCare Wellness Pro 240,Beauty & Personal Care,Wellness & Grooming,VitalCare,29.3,77.86
+PROD-0415,AromaLux Wellness Plus 250,Beauty & Personal Care,Wellness & Grooming,AromaLux,8.69,29.66
+PROD-0416,DermaPure Wellness Prime 260,Beauty & Personal Care,Wellness & Grooming,DermaPure,32.44,86.22
+PROD-0417,AromaLux Wellness Max 270,Beauty & Personal Care,Wellness & Grooming,AromaLux,12.72,36.04
+PROD-0418,VitalCare Wellness Elite 280,Beauty & Personal Care,Wellness & Grooming,VitalCare,11.33,27.01
+PROD-0419,VitalCare Wellness Max 290,Beauty & Personal Care,Wellness & Grooming,Generic / Store Brand,24.18,54.19
+PROD-0420,VitalCare Wellness Plus 300,Beauty & Personal Care,Wellness & Grooming,VitalCare,10.77,30.33
+PROD-0421,IronCore Exercise Prime 100,Sports & Fitness,Exercise Equipment,IronCore,241.57,387.01
+PROD-0422,TitanAthletics Exercise Max 110,Sports & Fitness,Exercise Equipment,TitanAthletics,41.65,68.18
+PROD-0423,IronCore Exercise Elite 120,Sports & Fitness,Exercise Equipment,IronCore,183.05,310.45
+PROD-0424,FlexForm Exercise Pro 130,Sports & Fitness,Exercise Equipment,FlexForm,152.87,249.22
+PROD-0425,PeakTrek Exercise Elite 140,Sports & Fitness,Exercise Equipment,PeakTrek,141.82,243.18
+PROD-0426,FlexForm Exercise Elite 150,Sports & Fitness,Exercise Equipment,FlexForm,139.53,231.42
+PROD-0427,PulseFit Exercise Air 160,Sports & Fitness,Exercise Equipment,Generic / Store Brand,138.63,216.25
+PROD-0428,PeakTrek Exercise Plus 170,Sports & Fitness,Exercise Equipment,PeakTrek,104.65,175.03
+PROD-0429,PeakTrek Exercise Ultra 180,Sports & Fitness,Exercise Equipment,PeakTrek,67.22,102.31
+PROD-0430,IronCore Exercise Max 190,Sports & Fitness,Exercise Equipment,IronCore,113.82,177.65
+PROD-0431,PeakTrek Exercise Air 200,Sports & Fitness,Exercise Equipment,PeakTrek,104.95,149.17
+PROD-0432,PeakTrek Exercise Ultra 210,Sports & Fitness,Exercise Equipment,PeakTrek,256.76,395.67
+PROD-0433,PulseFit Exercise Prime 220,Sports & Fitness,Exercise Equipment,PulseFit,253.0,423.5
+PROD-0434,PulseFit Exercise Plus 230,Sports & Fitness,Exercise Equipment,PulseFit,157.69,249.31
+PROD-0435,FlexForm Exercise Elite 240,Sports & Fitness,Exercise Equipment,FlexForm,175.43,248.95
+PROD-0436,FlexForm Exercise Air 250,Sports & Fitness,Exercise Equipment,FlexForm,298.43,436.67
+PROD-0437,PeakTrek Exercise Pro 260,Sports & Fitness,Exercise Equipment,PeakTrek,44.65,70.22
+PROD-0438,FlexForm Exercise Elite 270,Sports & Fitness,Exercise Equipment,FlexForm,152.45,264.68
+PROD-0439,FlexForm Exercise Plus 280,Sports & Fitness,Exercise Equipment,FlexForm,240.31,402.98
+PROD-0440,FlexForm Exercise Prime 290,Sports & Fitness,Exercise Equipment,FlexForm,48.44,68.1
+PROD-0441,IronCore Exercise Classic 300,Sports & Fitness,Exercise Equipment,IronCore,130.84,195.01
+PROD-0442,FlexForm Activewear Air 100,Sports & Fitness,Activewear,FlexForm,40.46,89.97
+PROD-0443,IronCore Activewear Max 110,Sports & Fitness,Activewear,IronCore,17.34,35.94
+PROD-0444,PeakTrek Activewear Prime 120,Sports & Fitness,Activewear,PeakTrek,31.44,72.42
+PROD-0445,PulseFit Activewear Classic 130,Sports & Fitness,Activewear,PulseFit,32.6,76.21
+PROD-0446,TitanAthletics Activewear Pro 140,Sports & Fitness,Activewear,TitanAthletics,10.52,28.31
+PROD-0447,FlexForm Activewear Air 150,Sports & Fitness,Activewear,FlexForm,12.78,37.66
+PROD-0448,PulseFit Activewear Prime 160,Sports & Fitness,Activewear,PulseFit,46.11,104.17
+PROD-0449,FlexForm Activewear Elite 170,Sports & Fitness,Activewear,FlexForm,30.84,75.47
+PROD-0450,IronCore Activewear Air 180,Sports & Fitness,Activewear,IronCore,38.02,85.24
+PROD-0451,TitanAthletics Activewear Prime 190,Sports & Fitness,Activewear,TitanAthletics,25.53,53.16
+PROD-0452,FlexForm Activewear Elite 200,Sports & Fitness,Activewear,FlexForm,34.25,92.72
+PROD-0453,TitanAthletics Activewear Air 210,Sports & Fitness,Activewear,TitanAthletics,18.17,47.57
+PROD-0454,IronCore Activewear Classic 220,Sports & Fitness,Activewear,IronCore,34.09,86.32
+PROD-0455,PulseFit Activewear Ultra 230,Sports & Fitness,Activewear,PulseFit,14.18,37.56
+PROD-0456,TitanAthletics Activewear Max 240,Sports & Fitness,Activewear,TitanAthletics,17.34,41.22
+PROD-0457,FlexForm Activewear Plus 250,Sports & Fitness,Activewear,FlexForm,27.84,60.1
+PROD-0458,IronCore Activewear Air 260,Sports & Fitness,Activewear,IronCore,36.46,99.19
+PROD-0459,TitanAthletics Activewear Plus 270,Sports & Fitness,Activewear,TitanAthletics,27.57,69.09
+PROD-0460,FlexForm Activewear Ultra 280,Sports & Fitness,Activewear,FlexForm,24.22,51.67
+PROD-0461,IronCore Activewear Prime 290,Sports & Fitness,Activewear,IronCore,27.03,71.43
+PROD-0462,PeakTrek Activewear Air 300,Sports & Fitness,Activewear,PeakTrek,18.84,41.34
+PROD-0463,IronCore Outdoor Elite 100,Sports & Fitness,Outdoor & Camping,IronCore,43.36,89.47
+PROD-0464,PeakTrek Outdoor Elite 110,Sports & Fitness,Outdoor & Camping,PeakTrek,103.91,195.08
+PROD-0465,FlexForm Outdoor Prime 120,Sports & Fitness,Outdoor & Camping,FlexForm,80.74,145.56
+PROD-0466,PeakTrek Outdoor Elite 130,Sports & Fitness,Outdoor & Camping,PeakTrek,35.74,66.81
+PROD-0467,FlexForm Outdoor Ultra 140,Sports & Fitness,Outdoor & Camping,FlexForm,107.32,220.04
+PROD-0468,PulseFit Outdoor Elite 150,Sports & Fitness,Outdoor & Camping,PulseFit,24.01,49.25
+PROD-0469,TitanAthletics Outdoor Prime 160,Sports & Fitness,Outdoor & Camping,TitanAthletics,131.0,243.28
+PROD-0470,FlexForm Outdoor Classic 170,Sports & Fitness,Outdoor & Camping,FlexForm,47.16,84.45
+PROD-0471,IronCore Outdoor Elite 180,Sports & Fitness,Outdoor & Camping,IronCore,38.28,70.2
+PROD-0472,IronCore Outdoor Classic 190,Sports & Fitness,Outdoor & Camping,IronCore,50.04,93.34
+PROD-0473,IronCore Outdoor Classic 200,Sports & Fitness,Outdoor & Camping,IronCore,115.62,180.35
+PROD-0474,FlexForm Outdoor Prime 210,Sports & Fitness,Outdoor & Camping,FlexForm,125.2,197.82
+PROD-0475,PulseFit Outdoor Pro 220,Sports & Fitness,Outdoor & Camping,PulseFit,122.0,252.19
+PROD-0476,PulseFit Outdoor Ultra 230,Sports & Fitness,Outdoor & Camping,PulseFit,91.87,183.64
+PROD-0477,FlexForm Outdoor Air 240,Sports & Fitness,Outdoor & Camping,FlexForm,95.5,183.12
+PROD-0478,PeakTrek Outdoor Prime 250,Sports & Fitness,Outdoor & Camping,PeakTrek,65.78,102.79
+PROD-0479,TitanAthletics Outdoor Classic 260,Sports & Fitness,Outdoor & Camping,TitanAthletics,83.13,157.73
+PROD-0480,TitanAthletics Outdoor Plus 270,Sports & Fitness,Outdoor & Camping,TitanAthletics,66.97,131.93
+PROD-0481,TitanAthletics Outdoor Ultra 280,Sports & Fitness,Outdoor & Camping,TitanAthletics,131.92,213.35
+PROD-0482,PeakTrek Outdoor Pro 290,Sports & Fitness,Outdoor & Camping,PeakTrek,23.27,42.04
+PROD-0483,TitanAthletics Outdoor Prime 300,Sports & Fitness,Outdoor & Camping,TitanAthletics,49.44,102.6
+PROD-0484,IronCore Yoga Air 100,Sports & Fitness,Yoga & Recovery,IronCore,38.26,77.58
+PROD-0485,IronCore Yoga Air 110,Sports & Fitness,Yoga & Recovery,IronCore,13.0,36.28
+PROD-0486,PeakTrek Yoga Plus 120,Sports & Fitness,Yoga & Recovery,PeakTrek,26.15,66.98
+PROD-0487,PulseFit Yoga Pro 130,Sports & Fitness,Yoga & Recovery,PulseFit,24.37,67.35
+PROD-0488,IronCore Yoga Classic 140,Sports & Fitness,Yoga & Recovery,IronCore,10.38,29.76
+PROD-0489,FlexForm Yoga Ultra 150,Sports & Fitness,Yoga & Recovery,FlexForm,26.4,52.52
+PROD-0490,TitanAthletics Yoga Plus 160,Sports & Fitness,Yoga & Recovery,TitanAthletics,35.56,83.77
+PROD-0491,PulseFit Yoga Pro 170,Sports & Fitness,Yoga & Recovery,PulseFit,16.77,35.47
+PROD-0492,PeakTrek Yoga Prime 180,Sports & Fitness,Yoga & Recovery,PeakTrek,14.35,38.23
+PROD-0493,TitanAthletics Yoga Elite 190,Sports & Fitness,Yoga & Recovery,TitanAthletics,23.57,61.8
+PROD-0494,TitanAthletics Yoga Max 200,Sports & Fitness,Yoga & Recovery,TitanAthletics,24.0,49.18
+PROD-0495,IronCore Yoga Elite 210,Sports & Fitness,Yoga & Recovery,IronCore,25.2,64.25
+PROD-0496,PeakTrek Yoga Prime 220,Sports & Fitness,Yoga & Recovery,PeakTrek,28.18,59.18
+PROD-0497,PulseFit Yoga Air 230,Sports & Fitness,Yoga & Recovery,PulseFit,10.47,28.26
+PROD-0498,IronCore Yoga Prime 240,Sports & Fitness,Yoga & Recovery,IronCore,18.81,45.86
+PROD-0499,FlexForm Yoga Classic 250,Sports & Fitness,Yoga & Recovery,FlexForm,26.51,69.04
+PROD-0500,IronCore Yoga Max 260,Sports & Fitness,Yoga & Recovery,IronCore,22.05,53.21
+PROD-0501,PeakTrek Yoga Max 270,Sports & Fitness,Yoga & Recovery,PeakTrek,39.54,79.46
+PROD-0502,IronCore Yoga Classic 280,Sports & Fitness,Yoga & Recovery,IronCore,27.62,56.37
+PROD-0503,PeakTrek Yoga Air 290,Sports & Fitness,Yoga & Recovery,PeakTrek,12.35,25.79
+PROD-0504,IronCore Yoga Air 300,Sports & Fitness,Yoga & Recovery,IronCore,10.07,24.09
+PROD-0505,TitanAthletics Sports Air 100,Sports & Fitness,Sports Accessories,TitanAthletics,6.65,15.94
+PROD-0506,IronCore Sports Pro 110,Sports & Fitness,Sports Accessories,IronCore,12.85,35.15
+PROD-0507,PeakTrek Sports Pro 120,Sports & Fitness,Sports Accessories,PeakTrek,9.37,27.82
+PROD-0508,PulseFit Sports Max 130,Sports & Fitness,Sports Accessories,PulseFit,5.19,12.04
+PROD-0509,TitanAthletics Sports Pro 140,Sports & Fitness,Sports Accessories,TitanAthletics,25.31,52.06
+PROD-0510,FlexForm Sports Pro 150,Sports & Fitness,Sports Accessories,FlexForm,10.63,22.92
+PROD-0511,PulseFit Sports Ultra 160,Sports & Fitness,Sports Accessories,PulseFit,8.64,26.85
+PROD-0512,FlexForm Sports Ultra 170,Sports & Fitness,Sports Accessories,FlexForm,9.78,26.9
+PROD-0513,IronCore Sports Plus 180,Sports & Fitness,Sports Accessories,IronCore,16.96,39.41
+PROD-0514,PulseFit Sports Ultra 190,Sports & Fitness,Sports Accessories,PulseFit,11.98,33.8
+PROD-0515,PulseFit Sports Pro 200,Sports & Fitness,Sports Accessories,PulseFit,13.4,44.03
+PROD-0516,FlexForm Sports Ultra 210,Sports & Fitness,Sports Accessories,FlexForm,11.38,33.94
+PROD-0517,PulseFit Sports Air 220,Sports & Fitness,Sports Accessories,PulseFit,11.38,25.58
+PROD-0518,TitanAthletics Sports Pro 230,Sports & Fitness,Sports Accessories,TitanAthletics,19.32,46.43
+PROD-0519,TitanAthletics Sports Classic 240,Sports & Fitness,Sports Accessories,TitanAthletics,9.25,19.27
+PROD-0520,TitanAthletics Sports Air 250,Sports & Fitness,Sports Accessories,TitanAthletics,13.26,36.9
+PROD-0521,TitanAthletics Sports Classic 260,Sports & Fitness,Sports Accessories,TitanAthletics,18.17,43.32
+PROD-0522,PulseFit Sports Classic 270,Sports & Fitness,Sports Accessories,PulseFit,15.15,43.95
+PROD-0523,PulseFit Sports Elite 280,Sports & Fitness,Sports Accessories,PulseFit,6.51,20.54
+PROD-0524,IronCore Sports Prime 290,Sports & Fitness,Sports Accessories,IronCore,12.43,35.99
+PROD-0525,PeakTrek Sports Classic 300,Sports & Fitness,Sports Accessories,PeakTrek,11.11,23.58
