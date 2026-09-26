@@ -3,6 +3,10 @@
 > **End-to-End Enterprise Data Analyst + Business Analyst Portfolio Project**  
 > *Production-Ready Analytics Architecture, Dimensional Star Schema, Advanced SQL, Python EDA & Statistical Testing, Power BI Dashboard Suite, Production Excel Model, and Complete Business Analysis Deliverables.*
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLokeshwarMenati%2FShopSphere)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-ShopSphere-181717?logo=github)](https://github.com/LokeshwarMenati/ShopSphere)
+[![Database](https://img.shields.io/badge/Database-SQLite%203.45-003B57?logo=sqlite)](file:///e:/ShopSphere/database/shopsphere.db)
+
 ---
 
 ## 1. Project Overview
