@@ -79,21 +79,7 @@ Despite scaling commercial gross merchandise sales to over **$24.4M net revenue 
 
 ---
 
-## 6. Dataset Summary & Commercial Baseline (2023 – 2025)
-
-| Metric Dimension | Verified Baseline Value | Metric Dimension | Verified Baseline Value |
-|---|---|---|---|
-| **Total Net Commercial Revenue** | **$24,435,345.82** | **Active Purchasing Customers** | **27,200 Accounts** |
-| **Total Gross Merchandise Revenue** | **$26,498,021.38** | **Repeat Customer Rate** | **55.60% (15,122 Repeat Buyers)** |
-| **Total Cost of Goods Sold (COGS)** | **$16,462,054.98** | **Average Order Value (AOV)** | **$238.58** |
-| **Total Realized Gross Profit** | **$7,973,290.84** | **Platform Product Return Rate** | **8.39% (10,594 Orders)** |
-| **Enterprise Gross Profit Margin %** | **32.63%** | **Late Delivery Rate (> Promised SLA)**| **11.38% (11,660 Shipments)** |
-| **Total Processed Orders** | **102,420 Transactions** | **Mean Delay (Late Shipments)** | **3.49 Calendar Days** |
-| **Total Active Catalog SKUs** | **525 Products** | **Pre-Delivery Cancellation Rate** | **4.77% ($1.16M Lost Gross Sales)** |
-
----
-
-## 7. Business Analyst Work & Governance Deliverables
+## 6. Business Analyst Work & Governance Deliverables
 The repository contains a complete suite of enterprise Business Analysis documentation located in `business_analysis/`:
 - [Project Charter](file:///e:/ShopSphere/business_analysis/project_charter.md): Background, objectives, scope boundaries, risks, assumptions, and success criteria.
 - [Stakeholder Analysis Matrix](file:///e:/ShopSphere/business_analysis/stakeholder_analysis.md): Detailed profiles and Power/Interest grids for 9 organizational stakeholders.
@@ -111,19 +97,19 @@ The repository contains a complete suite of enterprise Business Analysis documen
 
 ---
 
-## 8. Data Analyst Work & Technical Deliverables
+## 7. Data Analyst Work & Technical Deliverables
 
-### 8.1 Automated Data Hygiene & Quality Engineering
+### 7.1 Automated Data Hygiene & Quality Engineering
 - **Script**: `python/scripts/clean_and_profile.py`
 - **Automated Validation Suite**: `tests/data_validation.py`
 - Enforces 13 automated unit tests verifying primary key uniqueness, foreign key integrity, non-negative quantities, valid price bounds, discount constraints, and temporal order-to-delivery sequencing.
 - Documented in [data_quality_report.md](file:///e:/ShopSphere/documentation/data_quality_report.md).
 
-### 8.2 Relational Database Schema & Seeding
+### 7.2 Relational Database Schema & Seeding
 - **Database**: SQLite 3 database (`database/shopsphere.db`) and ANSI-compliant SQL scripts (`database/schema.sql`, `seed_data.sql`).
 - Relational schema enforcing primary/foreign keys, domain check constraints, and B-Tree indexes for fast analytical query execution.
 
-### 8.3 Advanced SQL Analytical Library (32 Queries Across 6 Files)
+### 7.3 Advanced SQL Analytical Library (32 Queries Across 6 Files)
 - [01_basic_analysis.sql](file:///e:/ShopSphere/sql/01_basic_analysis.sql): Overall order volume, financial baseline, AOV, payment methods, shipping tiers.
 - [02_sales_analysis.sql](file:///e:/ShopSphere/sql/02_sales_analysis.sql): Monthly trends, MoM revenue/profit growth using `LAG()`, YoY performance, day-of-week volume.
 - [03_customer_analysis.sql](file:///e:/ShopSphere/sql/03_customer_analysis.sql): Customer segment economics, Top 20 VIP accounts using `DENSE_RANK()`, purchase frequency buckets, repeat customer rates (55.6%), cohort retention, and RFM scoring using `NTILE(4)`.
@@ -131,17 +117,17 @@ The repository contains a complete suite of enterprise Business Analysis documen
 - [05_operations_analysis.sql](file:///e:/ShopSphere/sql/05_operations_analysis.sql): Regional sales density, delivery SLA breakdown, average delay days by shipping tier, delivery delay vs return correlation, cancellations, and return reasons.
 - [06_advanced_analysis.sql](file:///e:/ShopSphere/sql/06_advanced_analysis.sql): Cohort cumulative LTV progression, Pareto 80/20 customer concentration, 3-month rolling averages, and executive scorecard.
 
-### 8.4 Jupyter Notebooks Suite
+### 7.4 Jupyter Notebooks Suite
 - [01_data_quality.ipynb](file:///e:/ShopSphere/python/01_data_quality.ipynb): Raw data profiling, null patterns, duplicate detection, and outlier analysis.
 - [02_data_cleaning.ipynb](file:///e:/ShopSphere/python/02_data_cleaning.ipynb): Deterministic cleaning pipeline, date parsing, text normalization, and financial feature engineering.
 - [03_eda.ipynb](file:///e:/ShopSphere/python/03_eda.ipynb): Multi-dimensional exploratory analysis with paired findings, interpretations, and business implications.
 - [04_statistical_analysis.ipynb](file:///e:/ShopSphere/python/04_statistical_analysis.ipynb): Parametric and non-parametric distribution metrics, correlation matrices, OLS regression, Chi-Square test of independence, and One-Way ANOVA.
 
-### 8.5 Production Microsoft Excel Workbook
+### 7.5 Production Microsoft Excel Workbook
 - Located at [ShopSphere_Analysis.xlsx](file:///e:/ShopSphere/excel/ShopSphere_Analysis.xlsx).
 - Contains 8 professionally formatted sheets utilizing advanced formulas (`XLOOKUP`, `SUMIFS`, `COUNTIFS`, `IFERROR`), dynamic pivot matrix tables, conditional formatting, and KPI scorecards.
 
-### 8.6 Power BI Data Model & Dashboard Suite
+### 7.6 Power BI Data Model & Dashboard Suite
 - [Data Model Specification](file:///e:/ShopSphere/powerbi/data_model.md): Kimball Star Schema architecture (`FactOrders`, `FactDelivery`, `FactReturns`, `DimCustomer`, `DimProduct`, `DimDate`).
 - [DAX Measures Library](file:///e:/ShopSphere/powerbi/dax_measures.md): 16 certified DAX measures organized into 5 functional folders.
 - [Dashboard Specification](file:///e:/ShopSphere/powerbi/dashboard_specification.md): Granular UI/UX layouts, visual configurations, coordinates, and styling tokens for the 5-page report:
@@ -153,7 +139,7 @@ The repository contains a complete suite of enterprise Business Analysis documen
 
 ---
 
-## 9. Key Empirical Insights
+## 8. Key Empirical Insights
 1. **Delivery Delays Drive a 2.8x Surge in Product Returns**: On-time orders exhibit an ~7.1% return rate, whereas orders marked "Delivered Late" suffer an **19.84% return rate** ($\chi^2 = 1842.15, p < 0.001$).
 2. **Electronics Margin Squeeze**: Electronics contributes **44.8% of sales volume** ($11.9M) but only **27.6% of gross profit** ($2.2M) due to low gross margins (18.5%) and unconstrained discounting on loss-leader tech hardware.
 3. **Apparel Sizing Returns**: Apparel & Fashion commands strong 58.2% gross margins but suffers from an **elevated 14.2% return rate** ($684K returned), with **58.4% of returns driven by sizing and fit mismatches**.
@@ -162,7 +148,7 @@ The repository contains a complete suite of enterprise Business Analysis documen
 
 ---
 
-## 10. Strategic Recommendations
+## 9. Strategic Recommendations
 - **Supply Chain**: Enforce 3PL penalty clauses for late delivery rates exceeding 5%; establish a forward-deployed fulfillment depot in Texas to service Central/South customers within 48 hours.
 - **Merchandising**: Implement automated minimum-margin pricing floors (blocking discounts on products under 15% margin); mandate high-margin accessory attach rules.
 - **Product & UX**: Deploy an interactive 3D digital sizing tool and standardized measurement charts on all apparel product pages.
@@ -171,7 +157,7 @@ The repository contains a complete suite of enterprise Business Analysis documen
 
 ---
 
-## 11. Project Repository Structure
+## 10. Project Repository Structure
 
 ```
 shopsphere-analytics/
@@ -261,7 +247,7 @@ shopsphere-analytics/
 
 ---
 
-## 12. How to Run & Reproduce the Project
+## 11. How to Run & Reproduce the Project
 
 ### Prerequisites
 - Python 3.10+ installed
@@ -296,7 +282,7 @@ Connect to `database/shopsphere.db` using any SQLite client (or run queries dire
 
 ---
 
-## 13. Future Improvements & Next Steps
+## 12. Future Improvements & Next Steps
 1. **Dynamic Inventory Optimization**: Integrate warehouse stock levels and supplier reorder lead times to predict and prevent out-of-stock events during Q4 peaks.
 2. **Predictive Customer Churn Modeling**: Develop a machine learning classification model (Logistic Regression / Random Forest) to identify customers at risk of churn based on days since last purchase.
 3. **Automated Marketing Personalization**: Deploy recommendation algorithms to suggest high-margin accessories during checkout, raising overall basket margins.
